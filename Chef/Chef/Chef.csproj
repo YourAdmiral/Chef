@@ -5,4 +5,19 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Cultivators\FetusCultivators\" />
+    <Folder Include="Cultivators\RootCultivators\" />
+    <Folder Include="Cultivators\OnionCultivators\" />
+    <Folder Include="Cultivators\LeafCultivators\" />
+    <Folder Include="Cultivators\GreenCultivators\" />
+    <Folder Include="Cultivators\SpiceCultivators\" />
+    <Folder Include="Vegetables\Fetuses\" />
+    <Folder Include="Vegetables\Roots\" />
+    <Folder Include="Vegetables\Leafs\" />
+    <Folder Include="Vegetables\Onions\" />
+    <Folder Include="Vegetables\Greens\" />
+    <Folder Include="Vegetables\Spices\" />
+  </ItemGroup>
+
 </Project>
