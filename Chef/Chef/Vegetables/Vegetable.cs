@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Vegetables
 {
-    class Vegetable
+    abstract class Vegetable
     {
         protected string sort;
         public string Sort
@@ -209,12 +209,12 @@ namespace Chef.Vegetables
                 this.calories = calories;
                 this.water = water;
         }
-        public void GetInformation()
+        public virtual void GetInformation()
         {
             Console.WriteLine("Общая информация:\n" +
                 "Сорт - " + Sort + ".\n" + 
                 "Цвет - " + Color + ".\n" +
-                "Вес - " + Weight + ".\n");
+                "Вес - " + Weight + ".");
             Console.WriteLine("Пищевая ценность:\n" +
                 "Калорийность - " + Calories + " ккал.\n" +
                 "Белки - " + Proteins + " г.\n" +
@@ -222,7 +222,7 @@ namespace Chef.Vegetables
                 "Углеводы - " + Carbohydrates + " г.\n" +
                 "Вода - " + Water + " г.");
         }
-        public void Handle()
+        public virtual void Handle()
         {
             Console.WriteLine("Очистили от пыли и грязи...");
         }

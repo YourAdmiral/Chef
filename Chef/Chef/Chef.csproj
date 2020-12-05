@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -13,7 +13,6 @@
     <Folder Include="Cultivators\GreenCultivators\" />
     <Folder Include="Cultivators\SpiceCultivators\" />
     <Folder Include="Vegetables\Fetuses\" />
-    <Folder Include="Vegetables\Roots\" />
     <Folder Include="Vegetables\Leafs\" />
     <Folder Include="Vegetables\Onions\" />
     <Folder Include="Vegetables\Greens\" />
