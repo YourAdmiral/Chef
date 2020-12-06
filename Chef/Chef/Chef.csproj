@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Cultivators\LeafCultivators\" />
     <Folder Include="Cultivators\GreenCultivators\" />
     <Folder Include="Cultivators\SpiceCultivators\" />
   </ItemGroup>
