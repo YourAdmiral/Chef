@@ -94,7 +94,7 @@ namespace Chef.Vegetables
             Console.WriteLine("Общая информация:\n" +
                 "Сорт - " + Sort + ".\n" +
                 "Цвет - " + Color + ".\n" +
-                "Вес - " + Weight + ".");
+                "Вес - " + Weight + " г.");
             Console.WriteLine("Пищевая ценность:\n" +
                 "Калорийность - " + Calories + " ккал.\n" +
                 "Белки - " + Proteins + " г.\n" +
