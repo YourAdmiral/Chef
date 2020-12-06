@@ -7,11 +7,35 @@ namespace Chef.Vegetables.Fetuses
     class Pepper : Fetus
     {
         double c;
-        public double C { get; set; }
+        public double C 
+        {
+            get { return c; }
+            set
+            {
+                if (CheckDouble(value))
+                    c = value;
+            }
+        }
         double si;
-        public double Si { get; set; }
+        public double Si 
+        {
+            get { return si; }
+            set
+            {
+                if (CheckDouble(value))
+                    si = value;
+            }
+        }
         double cu;
-        public double Cu { get; set; }
+        public double Cu 
+        {
+            get { return cu; }
+            set
+            {
+                if (CheckDouble(value))
+                    cu = value;
+            }
+        }
         public Pepper(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water, double c, double si, double cu)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
         {

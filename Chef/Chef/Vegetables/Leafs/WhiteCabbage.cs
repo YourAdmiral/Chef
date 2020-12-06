@@ -7,11 +7,35 @@ namespace Chef.Vegetables.Leafs
     class WhiteCabbage : Leaf
     {
         double co;
-        public double Co { get; set; }
+        public double Co 
+        {
+            get { return co; }
+            set
+            {
+                if (CheckDouble(value))
+                    co = value;
+            }
+        }
         double mo;
-        public double Mo { get; set; }
+        public double Mo 
+        {
+            get { return mo; }
+            set
+            {
+                if (CheckDouble(value))
+                    mo = value;
+            }
+        }
         double cr;
-        public double Cr { get; set; }
+        public double Cr 
+        {
+            get { return cr; }
+            set
+            {
+                if (CheckDouble(value))
+                    cr = value;
+            }
+        }
         public WhiteCabbage(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water, double co, double mo, double cr)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
         {

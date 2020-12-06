@@ -7,11 +7,35 @@ namespace Chef.Vegetables.Roots
     class Carrot : Root
     {
         double si;
-        public double Si { get; set; }
+        public double Si 
+        {
+            get { return si; }
+            set
+            {
+                if (CheckDouble(value))
+                    si = value;
+            }
+        }
         double mo;
-        public double Mo { get; set; }
+        public double Mo 
+        {
+            get { return mo; }
+            set
+            {
+                if (CheckDouble(value))
+                    mo = value;
+            }
+        }
         double co;
-        public double Co { get; set; }
+        public double Co 
+        {
+            get { return co; }
+            set
+            {
+                if (CheckDouble(value))
+                    co = value;
+            }
+        }
         public Carrot(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water, double si, double mo, double co)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
         {

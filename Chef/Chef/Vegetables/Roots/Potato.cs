@@ -7,11 +7,35 @@ namespace Chef.Vegetables.Roots
     class Potato:Root
     {
         double k;
-        public double K { get; set; }
+        public double K 
+        {
+            get { return k; }
+            set
+            {
+                if (CheckDouble(value))
+                    k = value;
+            }
+        }
         double si;
-        public double Si { get; set; }
+        public double Si 
+        {
+            get { return si; }
+            set
+            {
+                if (CheckDouble(value))
+                    si = value;
+            }
+        }
         double co;
-        public double Co { get; set; }
+        public double Co 
+        {
+            get { return co; }
+            set
+            {
+                if (CheckDouble(value))
+                    co = value;
+            }
+        }
         public Potato(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water, double k, double si, double co)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
         {

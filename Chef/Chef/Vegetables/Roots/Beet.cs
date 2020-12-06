@@ -7,11 +7,35 @@ namespace Chef.Vegetables.Roots
     class Beet : Root
     {
         double si;
-        public double Si { get; set; }
+        public double Si 
+        {
+            get { return si; }
+            set
+            {
+                if (CheckDouble(value))
+                    si = value;
+            }
+        }
         double cr;
-        public double Cr { get; set; }
+        public double Cr 
+        {
+            get { return cr; }
+            set
+            {
+                if (CheckDouble(value))
+                    cr = value;
+            }
+        }
         double mn;
-        public double Mn { get; set; }
+        public double Mn 
+        {
+            get { return mn; }
+            set
+            {
+                if (CheckDouble(value))
+                    mn = value;
+            }
+        }
         public Beet(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water, double si, double cr, double mn)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
         {

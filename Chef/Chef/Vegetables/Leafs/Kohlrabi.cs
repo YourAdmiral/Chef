@@ -7,11 +7,38 @@ namespace Chef.Vegetables.Leafs
     class Kohlrabi : Leaf
     {
         double ca;
-        public double Ca { get; set; }
+        public double Ca 
+        {
+            get 
+            { 
+                return ca; 
+            }
+            set
+            {
+                if (CheckDouble(value))
+                    ca = value;
+            }
+        }
         double mg;
-        public double Mg { get; set; }
+        public double Mg 
+        {
+            get { return mg; }
+            set
+            {
+                if (CheckDouble(value))
+                    mg = value;
+            }
+        }
         double p;
-        public double P { get; set; }
+        public double P 
+        {
+            get { return p; }
+            set
+            {
+                if (CheckDouble(value))
+                    p = value;
+            }
+        }
         public Kohlrabi(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water, double ca, double mg, double p)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
         {
