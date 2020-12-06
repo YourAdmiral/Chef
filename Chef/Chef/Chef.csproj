@@ -13,7 +13,6 @@
     <Folder Include="Cultivators\GreenCultivators\" />
     <Folder Include="Cultivators\SpiceCultivators\" />
     <Folder Include="Vegetables\Onions\" />
-    <Folder Include="Vegetables\Greens\" />
     <Folder Include="Vegetables\Spices\" />
   </ItemGroup>
 
