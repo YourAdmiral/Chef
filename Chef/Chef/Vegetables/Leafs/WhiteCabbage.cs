@@ -6,5 +6,6 @@ namespace Chef.Vegetables.Leafs
 {
     class WhiteCabbage
     {
+
     }
 }
