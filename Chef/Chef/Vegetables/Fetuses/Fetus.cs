@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Chef.Vegetables.Roots
+namespace Chef.Vegetables.Fetuses
 {
-    abstract class Root : Vegetable
+    abstract class Fetus : Vegetable
     {
-        public Root(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water)
+        public Fetus(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
         {
 
@@ -14,13 +14,13 @@ namespace Chef.Vegetables.Roots
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Очистили от кожуры...");
+            Console.WriteLine("Извлекли семечки...");
         }
 
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Классификация:\nКорнеплод.");
+            Console.WriteLine("Классификация:\nПлод.");
         }
     }
 }
