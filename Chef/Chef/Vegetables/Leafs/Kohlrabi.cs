@@ -50,9 +50,9 @@ namespace Chef.Vegetables.Leafs
         {
             base.GetInformation();
             Console.WriteLine("Минералы и витамины:\n" +
-                "Кальций - " + Ca + " мг.\n" +
-                "Магний - " + Mg + " мг.\n" +
-                "Фосфор - " + P + " мг.");
+                "Кальций - " + Ca + " г.\n" +
+                "Магний - " + Mg + " г.\n" +
+                "Фосфор - " + P + " г.");
         }
         public override void Handle()
         {

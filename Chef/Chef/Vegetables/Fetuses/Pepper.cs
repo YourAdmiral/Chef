@@ -47,9 +47,9 @@ namespace Chef.Vegetables.Fetuses
         {
             base.GetInformation();
             Console.WriteLine("Минералы и витамины:\n" +
-                "Углерод - " + C + " мг.\n" +
-                "Кремний - " + Si + " мг.\n" +
-                "Медь - " + Cu + " мг.");
+                "Углерод - " + C + " г.\n" +
+                "Кремний - " + Si + " г.\n" +
+                "Медь - " + Cu + " г.");
         }
         public override void Handle()
         {
