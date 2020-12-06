@@ -47,9 +47,9 @@ namespace Chef.Vegetables.Greens
         {
             base.GetInformation();
             Console.WriteLine("Минералы и витамины:\n" +
-                "Кальций - " + Ca + " мг.\n" +
-                "Кремний - " + Si + " мг.\n" +
-                "Магний - " + Mg + " мг.");
+                "Кальций - " + Ca + " г.\n" +
+                "Кремний - " + Si + " г.\n" +
+                "Магний - " + Mg + " г.");
         }
         public override void Handle()
         {

@@ -47,9 +47,9 @@ namespace Chef.Vegetables.Onions
         {
             base.GetInformation();
             Console.WriteLine("Минералы и витамины:\n" +
-                "Оксид углерода - " + Co + " мг.\n" +
-                "Хром - " + Cr + " мг.\n" +
-                "Марганец - " + Mn + " мг.");
+                "Оксид углерода - " + Co + " г.\n" +
+                "Хром - " + Cr + " г.\n" +
+                "Марганец - " + Mn + " г.");
         }
         public override void Handle()
         {

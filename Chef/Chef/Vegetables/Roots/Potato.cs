@@ -47,9 +47,9 @@ namespace Chef.Vegetables.Roots
         {
             base.GetInformation();
             Console.WriteLine("Минералы и витамины:\n" +
-                "Калий - " + K + " мг.\n" +
-                "Кремний - " + Si + " мг.\n" +
-                "Углерод - " + Co + " мг.");
+                "Калий - " + K + " г.\n" +
+                "Кремний - " + Si + " г.\n" +
+                "Углерод - " + Co + " г.");
         }
         public override void Handle()
         {

@@ -47,9 +47,9 @@ namespace Chef.Vegetables.Greens
         {
             base.GetInformation();
             Console.WriteLine("Минералы и витамины:\n" +
-                "Марганец - " + Mn + " мг.\n" +
-                "Хром - " + Cr + " мг.\n" +
-                "Оксид углерода - " + Co + " мг.");
+                "Марганец - " + Mn + " г.\n" +
+                "Хром - " + Cr + " г.\n" +
+                "Оксид углерода - " + Co + " г.");
         }
         public override void Handle()
         {

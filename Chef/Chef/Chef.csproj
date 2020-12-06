@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Folder Include="Cultivators\FetusCultivators\" />
-    <Folder Include="Cultivators\RootCultivators\" />
     <Folder Include="Cultivators\OnionCultivators\" />
     <Folder Include="Cultivators\LeafCultivators\" />
     <Folder Include="Cultivators\GreenCultivators\" />
