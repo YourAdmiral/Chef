@@ -7,11 +7,35 @@ namespace Chef.Vegetables.Fetuses
     class Cucumber : Fetus
     {
         double k;
-        public double K { get; set; }
+        public double K 
+        {
+            get { return k; }
+            set
+            {
+                if (CheckDouble(value))
+                    k = value;
+            }
+        }
         double si;
-        public double Si { get; set; }
+        public double Si 
+        {
+            get { return si; }
+            set
+            {
+                if (CheckDouble(value))
+                    si = value;
+            }
+        }
         double cr;
-        public double Cr { get; set; }
+        public double Cr 
+        {
+            get { return cr; }
+            set
+            {
+                if (CheckDouble(value))
+                    cr = value;
+            }
+        }
         public Cucumber(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water, double k, double si, double cr)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
         {

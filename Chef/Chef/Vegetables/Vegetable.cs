@@ -24,28 +24,8 @@ namespace Chef.Vegetables
             get { return weight; }
             set
             {
-                try
-                {
-                    if (value.GetType() == typeof(double))
-                    {
-                        if (value > 0)
-                        {
-                            weight = value;
-                        }
-                        else
-                        {
-                            throw new Exception("Значение не может быть меньше нуля.");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Было введено некорректное значение.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ошибка: " + ex.Message);
-                }
+                if (CheckDouble(value))
+                    weight = value;
             }
         }
         protected double proteins;
@@ -54,165 +34,65 @@ namespace Chef.Vegetables
             get { return proteins; }
             set
             {
-                try
-                {
-                    if (value.GetType() == typeof(double))
-                    {
-                        if (value < Weight)
-                        {
-                            proteins = value;
-                        }
-                        else
-                        {
-                            throw new Exception("Введенное значение превышает общий вес.");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Было введено некорректное значение.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ошибка: " + ex.Message);
-                }
+                if (CheckDouble(value) && CheckWeight(value))
+                    proteins = value;
             }
         }
         protected double fats;
         public double Fats
         {
             get { return fats; }
-            set 
+            set
             {
-                try
-                {
-                    if (value.GetType() == typeof(double))
-                    {
-                        if (value < Weight)
-                        {
-                            fats = value;
-                        }
-                        else
-                        {
-                            throw new Exception("Введенное значение превышает общий вес.");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Было введено некорректное значение.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ошибка: " + ex.Message);
-                }
+                if (CheckDouble(value) && CheckWeight(value))
+                    fats = value;
             }
         }
         protected double carbohydrates;
         public double Carbohydrates
         {
             get { return carbohydrates; }
-            set 
+            set
             {
-                try
-                {
-                    if (value.GetType() == typeof(double))
-                    {
-                        if (value < Weight)
-                        {
-                            carbohydrates = value;
-                        }
-                        else
-                        {
-                            throw new Exception("Введенное значение превышает общий вес.");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Было введено некорректное значение.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ошибка: " + ex.Message);
-                }
+                if (CheckDouble(value) && CheckWeight(value))
+                    carbohydrates = value;
             }
         }
         protected double calories;
         public double Calories
         {
             get { return calories; }
-            set 
+            set
             {
-                try
-                {
-                    if (value.GetType() == typeof(double))
-                    {
-                        if (value < Weight)
-                        {
-                            calories = value;
-                        }
-                        else
-                        {
-                            throw new Exception("Введенное значение превышает общий вес.");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Было введено некорректное значение.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ошибка: " + ex.Message);
-                }
+                if (CheckDouble(value) && CheckWeight(value))
+                    calories = value;
             }
         }
         protected double water;
         public double Water
         {
             get { return water; }
-            set 
+            set
             {
-                try
-                {
-                    if (value.GetType() == typeof(double))
-                    {
-                        if (value < Weight)
-                        {
-                            water = value;
-                        }
-                        else
-                        {
-                            throw new Exception("Введенное значение превышает общий вес.");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Было введено некорректное значение.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ошибка: " + ex.Message);
-                }
+                if (CheckDouble(value) && CheckWeight(value))
+                    water = value;
             }
         }
         public Vegetable(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water)
         {
-                this.sort = sort;
-                this.color = color;
-                this.weight = weight;
-                this.proteins = proteins;
-                this.fats = fats;
-                this.carbohydrates = carbohydrates;
-                this.calories = calories;
-                this.water = water;
+            this.sort = sort;
+            this.color = color;
+            this.weight = weight;
+            this.proteins = proteins;
+            this.fats = fats;
+            this.carbohydrates = carbohydrates;
+            this.calories = calories;
+            this.water = water;
         }
         public virtual void GetInformation()
         {
             Console.WriteLine("Общая информация:\n" +
-                "Сорт - " + Sort + ".\n" + 
+                "Сорт - " + Sort + ".\n" +
                 "Цвет - " + Color + ".\n" +
                 "Вес - " + Weight + ".");
             Console.WriteLine("Пищевая ценность:\n" +
@@ -225,6 +105,52 @@ namespace Chef.Vegetables
         public virtual void Handle()
         {
             Console.WriteLine("Очистили от пыли и грязи...");
+        }
+        protected bool CheckDouble(double value)
+        {
+            try
+            {
+                if (value.GetType() == typeof(double))
+                {
+                    if (value > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("Значение не может быть меньше нуля.");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Было введено некорректное значение.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка: " + ex.Message);
+                return false;
+            }
+        }
+
+        protected bool CheckWeight(double value)
+        {
+            try
+            {
+                if (value < Weight)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Значение превышает общий вес.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка: " + ex.Message);
+                return false;
+            }
         }
     }
 }
