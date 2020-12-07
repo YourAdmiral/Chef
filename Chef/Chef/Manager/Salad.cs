@@ -16,7 +16,7 @@ namespace Chef.Manager
         public Salad(string name, List<Vegetables.Vegetable> composition)
         {
             Name = name;
-            composition.AddRange(composition);
+            AddVegetables(composition);
         }
         public void AddVegetable(Vegetables.Vegetable vegetable)
         {
@@ -27,9 +27,7 @@ namespace Chef.Manager
         {
             composition.AddRange(vegetables);
             foreach (var item in vegetables)
-            {
                 item.Handle();
-            }
         }
         public void CountCalories()
         {
