@@ -73,20 +73,59 @@ namespace Chef.Manager
                 Console.WriteLine("Пусто");
             }
         }
-        public void FindCalories(double num1, double num2)
+        public void FindCalories()
         {
-            Console.WriteLine("Овощи соответствующие заданному диапазону калорийности: ");
-            if (composition.Count!=0)
+            if (composition.Count != 0)
             {
-                var selectedVegetables = composition.Where(v => (v.Calories >= num1) && (v.Calories <= num2)).OrderBy(v => v);
-                foreach (var item in selectedVegetables)
+                string choose1 = null;
+                string choose2 = null;
+                double num1 = 0;
+                double num2 = 0;
+                Console.WriteLine("Введите минимальное число калорий: ");
+                while (choose1 == null)
                 {
-                    Console.WriteLine(item.GetVegetableName() + " \"" + item.Sort + "\" " + item.Calories + " г.");
+                    try
+                    {
+                        choose1 = Console.ReadLine();
+                        num1 = Convert.ToDouble(choose1);
+                    }
+                    catch (Exception)
+                    {
+                        choose1 = null;
+                        Console.WriteLine("Введено неккоректное значение!");
+                    }
+                }
+                Console.WriteLine("Введите максимальное число калорий: ");
+                while (choose2 == null)
+                {
+                    try
+                    {
+                        choose2 = Console.ReadLine();
+                        num2 = Convert.ToDouble(choose2);
+                    }
+                    catch (Exception)
+                    {
+                        choose2 = null;
+                        Console.WriteLine("Введено неккоректное значение!");
+                    }
+                }
+                var selectedVegetables = composition.Where(v => (v.Calories >= num1) && (v.Calories <= num2)).OrderBy(v => v);
+                if (selectedVegetables.Count() != 0)
+                {
+                    Console.WriteLine("Ингридиенты соответствующие заданному диапазону калорийности (" + num1 + " - " + num2 + "): ");
+                    foreach (var item in selectedVegetables)
+                    {
+                        Console.WriteLine(item.GetVegetableName() + " \"" + item.Sort + "\" " + item.Calories + " г.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Совпадений не найдено!");
                 }
             }
             else
             {
-                Console.WriteLine("Пусто");
+                Console.WriteLine("В салате отсутствуют ингридиенты!");
             }
         }
     }

@@ -202,21 +202,21 @@ namespace Chef
             {
                 string choose = null;
                 int num;
-                Console.WriteLine("Салаты имеющиеся в меню: ");
-                for (int i = 0; i < salads.Count; i++)
-                {
-                    Console.WriteLine(i + 1 + " - " + salads[i].Name);
-                }
-                Console.WriteLine("0 - Вернуться");
                 while (choose != "0")
                 {
+                    Console.WriteLine("Салаты имеющиеся в меню: ");
+                    for (int i = 0; i < salads.Count; i++)
+                    {
+                        Console.WriteLine(i + 1 + " - " + salads[i].Name);
+                    }
+                    Console.WriteLine("0 - Вернуться");
                     try
                     {
                         choose = Console.ReadLine();
                         num = Convert.ToInt32(choose) - 1;
                         if (choose != "0")
                         {
-                            salads[num].ShowComposition();
+                            SaladAction(num);
                         }
                         else
                         {
@@ -232,6 +232,49 @@ namespace Chef
             else
             {
                 Console.WriteLine("Салаты отсутствуют!");
+            }
+        }
+        static void SaladAction(int num)
+        {
+            salads[num].ShowComposition();
+            salads[num].CountCalories();
+            string choose = null;
+            while (choose != "0")
+            {
+                Console.WriteLine("Выберите действие над салатом \"" + salads[num].Name + "\":");
+                Console.WriteLine("-----------------------------");
+                Console.WriteLine(
+                "1 - Сортировать состав салата по калориям\n" +
+                "2 - Сортировать состав салата по жирам\n" +
+                "3 - Сортировать состав салата по углеводам\n" +
+                "4 - Сортировать состав салата по белкам\n" +
+                "5 - Найти ингридиенты в салате соответствующие заданному диапазону калорийности\n" +
+                "0 - Вернуться");
+                Console.WriteLine("-----------------------------");
+                choose = Console.ReadLine();
+                switch (choose)
+                {
+                    case "1":
+                        salads[num].SortByCalories();
+                        break;
+                    case "2":
+                        salads[num].SortByFats();
+                        break;
+                    case "3":
+                        salads[num].SortByCarbohydrates();
+                        break;
+                    case "4":
+                        salads[num].SortByProteins();
+                        break;
+                    case "5":
+                        salads[num].FindCalories();
+                        break;
+                    case "0":
+                        break;
+                    default:
+                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        break;
+                }
             }
         }
         static void ChooseRoot()
