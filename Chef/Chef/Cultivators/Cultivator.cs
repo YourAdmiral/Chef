@@ -9,6 +9,7 @@ namespace Chef.Cultivators
     {
         protected string WriteSort()
         {
+            Console.WriteLine("---Укажите информацию об ингредиенте---");
             string sort;
             Console.WriteLine("Введите название сорта: ");
             sort = Console.ReadLine();

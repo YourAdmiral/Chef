@@ -115,7 +115,7 @@ namespace Chef.Manager
                     Console.WriteLine("Ингридиенты соответствующие заданному диапазону калорийности (" + num1 + " - " + num2 + "): ");
                     foreach (var item in selectedVegetables)
                     {
-                        Console.WriteLine(item.GetVegetableName() + " \"" + item.Sort + "\" " + item.Calories + " г.");
+                        Console.WriteLine(item.GetVegetableName() + " \"" + item.Sort + "\" " + item.Calories + " ккал.");
                     }
                 }
                 else

@@ -26,7 +26,7 @@ namespace Chef
                 Console.WriteLine("Выберите действие:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Добавить овощи на склад\n" +
+                "1 - Добавить ингредиенты на склад\n" +
                 "2 - Приготовить салат\n" +
                 "3 - Проверить склад овощей\n" +
                 "4 - Проверить список салатов\n" +
@@ -153,7 +153,7 @@ namespace Chef
             }
             else
             {
-                Console.WriteLine("Требуются ингридиенты!");
+                Console.WriteLine("Требуются ингредиенты!");
             }
         }
         static void CheckStorage()
@@ -162,7 +162,7 @@ namespace Chef
             {
                 string choose = null;
                 int num;
-                Console.WriteLine("Овощи имеющиеся на складе: ");
+                Console.WriteLine("Ингредиенты имеющиеся на складе: ");
                 for (int i = 0; i < vegetablesStorage.Count; i++)
                 {
                     Console.WriteLine(i + 1 + " - " + vegetablesStorage[i].GetVegetableName() + " \"" +

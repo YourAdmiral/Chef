@@ -53,6 +53,7 @@ namespace Chef.Vegetables.Fetuses
         }
         public override void Handle()
         {
+            Console.WriteLine("---Подготавливаем огурец---");
             base.Handle();
             Console.WriteLine("Нарезали огурец...");
         }

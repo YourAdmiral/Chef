@@ -91,6 +91,7 @@ namespace Chef.Vegetables
         }
         public virtual void GetInformation()
         {
+            Console.WriteLine("---Информация про " + GetVegetableName() + "---");
             Console.WriteLine("Общая информация:\n" +
                 "Сорт - " + Sort + ".\n" +
                 "Цвет - " + Color + ".\n" +
@@ -104,6 +105,7 @@ namespace Chef.Vegetables
         }
         public virtual void Handle()
         {
+            Console.WriteLine("---Подготавливаем " + GetVegetableName() + "---");
             Console.WriteLine("Очистили от пыли и грязи...");
         }
         protected bool CheckDouble(double value)
