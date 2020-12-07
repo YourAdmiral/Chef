@@ -59,5 +59,9 @@ namespace Chef.Vegetables.Spices
             base.Handle();
             Console.WriteLine("Насыпали сахара...");
         }
+        public override string GetVegetableName()
+        {
+            return "Сахар";
+        }
     }
 }

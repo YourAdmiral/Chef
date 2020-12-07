@@ -56,5 +56,9 @@ namespace Chef.Vegetables.Fetuses
             base.Handle();
             Console.WriteLine("Нарезали томат...");
         }
+        public override string GetVegetableName()
+        {
+            return "Томат";
+        }
     }
 }

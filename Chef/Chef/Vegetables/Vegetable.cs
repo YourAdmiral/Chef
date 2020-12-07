@@ -152,5 +152,6 @@ namespace Chef.Vegetables
                 return false;
             }
         }
+        abstract public string GetVegetableName();
     }
 }

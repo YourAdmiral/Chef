@@ -56,5 +56,9 @@ namespace Chef.Vegetables.Greens
             base.Handle();
             Console.WriteLine("Нарезали укроп...");
         }
+        public override string GetVegetableName()
+        {
+            return "Укроп";
+        }
     }
 }

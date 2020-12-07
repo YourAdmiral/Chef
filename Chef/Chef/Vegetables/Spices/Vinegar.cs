@@ -59,5 +59,9 @@ namespace Chef.Vegetables.Spices
             base.Handle();
             Console.WriteLine("Налили уксуса...");
         }
+        public override string GetVegetableName()
+        {
+            return "Уксус";
+        }
     }
 }
