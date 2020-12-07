@@ -56,5 +56,9 @@ namespace Chef.Vegetables.Roots
             base.Handle();
             Console.WriteLine("Нарезали морковь...");
         }
+        public override string GetVegetableName()
+        {
+            return "Морковь";
+        }
     }
 }

@@ -56,5 +56,9 @@ namespace Chef.Vegetables.Leafs
             base.Handle();
             Console.WriteLine("Нашинковали капусту...");
         }
+        public override string GetVegetableName()
+        {
+            return "Белокочанная капуста";
+        }
     }
 }

@@ -56,5 +56,9 @@ namespace Chef.Vegetables.Onions
             base.Handle();
             Console.WriteLine("Нарезали чеснок...");
         }
+        public override string GetVegetableName()
+        {
+            return "Чеснок";
+        }
     }
 }

@@ -55,5 +55,9 @@ namespace Chef.Vegetables.Leafs
             base.Handle();
             Console.WriteLine("Нашинковали брокколи...");
         }
+        public override string GetVegetableName()
+        {
+            return "Брокколи";
+        }
     }
 }

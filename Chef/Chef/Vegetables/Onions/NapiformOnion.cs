@@ -56,5 +56,9 @@ namespace Chef.Vegetables.Onions
             base.Handle();
             Console.WriteLine("Нарезали репчатый лук...");
         }
+        public override string GetVegetableName()
+        {
+            return "Лук репчатый";
+        }
     }
 }
