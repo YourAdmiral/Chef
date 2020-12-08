@@ -7,6 +7,7 @@ namespace Chef.Cultivators
 {
     abstract class Cultivator
     {
+        double weight = -1;
         protected string WriteSort()
         {
             Console.WriteLine("---Укажите информацию об ингредиенте---");
@@ -25,7 +26,8 @@ namespace Chef.Cultivators
         protected double WriteWeight()
         {
             Console.WriteLine("Введите вес (г): ");
-            return WriteDouble();
+            weight = WriteDouble();
+            return weight;
               
         }
         protected double WriteProteins()
@@ -46,7 +48,26 @@ namespace Chef.Cultivators
         protected double WriteCalories()
         {
             Console.WriteLine("Введите количество калорий (ккал): ");
-            return WriteDouble();
+            double num = 0;
+            while (num == 0)
+            {
+                try
+                {
+                    num = Convert.ToDouble(Console.ReadLine());
+                    if (num == 0)
+                        throw new Exception();
+                    if (num < 0)
+                    {
+                        throw new Exception();
+                    }
+                }
+                catch (Exception)
+                {
+                    num = 0;
+                    Console.WriteLine("Ошибка: Введено некорректное значение!");
+                }
+            }
+            return num;
         }
         protected double WriteWater()
         {
@@ -63,13 +84,34 @@ namespace Chef.Cultivators
                     num = Convert.ToDouble(Console.ReadLine());
                     if (num == 0)
                         throw new Exception();
+                    if (num < 0)
+                    {
+                        throw new Exception();
+                    }
+                    if (CompareWithWeight(num))
+                    {
+                        throw new Exception();
+                    }
                 }
                 catch (Exception)
                 {
+                    num = 0;
                     Console.WriteLine("Ошибка: Введено некорректное значение!");
                 }
             }
             return num;
+        }
+        protected bool CompareWithWeight(double num)
+        {
+            if (num >= weight)
+            {
+                if (weight!=-1)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
         }
     }
 }
