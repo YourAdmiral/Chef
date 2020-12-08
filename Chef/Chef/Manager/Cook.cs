@@ -4,21 +4,21 @@ using System.Text.RegularExpressions;
 
 namespace Chef
 {
-    class Cook
+    internal class Cook
     {
-        static List<Vegetables.Vegetable> vegetablesStorage = new List<Vegetables.Vegetable>();
-        static List<Manager.Salad> salads = new List<Manager.Salad>();
-        static Cultivators.RootCultivators.RootCultivator rootCultivator;
-        static Cultivators.FetusCultivators.FetusCultivator fetusCultivator;
-        static Cultivators.OnionCultivators.OnionCultivator onionCultivator;
-        static Cultivators.GreenCultivators.GreenCultivator greenCultivator;
-        static Cultivators.LeafCultivators.LeafCultivator leafCultivator;
-        static Cultivators.SpiceCultivators.SpiceCultivator spiceCultivator;
-        static void Main(string[] args)
+        private static List<Vegetables.Vegetable> vegetablesStorage = new List<Vegetables.Vegetable>();
+        private static List<Manager.Salad> salads = new List<Manager.Salad>();
+        private static Cultivators.RootCultivators.RootCultivator rootCultivator;
+        private static Cultivators.FetusCultivators.FetusCultivator fetusCultivator;
+        private static Cultivators.OnionCultivators.OnionCultivator onionCultivator;
+        private static Cultivators.GreenCultivators.GreenCultivator greenCultivator;
+        private static Cultivators.LeafCultivators.LeafCultivator leafCultivator;
+        private static Cultivators.SpiceCultivators.SpiceCultivator spiceCultivator;
+        private static void Main(string[] args)
         {
             Choose();
         }
-        static void Choose()
+        private static void Choose()
         {
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
@@ -56,7 +56,7 @@ namespace Chef
                 }
             }
         }
-        static void CreateVegetable()
+        private static void CreateVegetable()
         {
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
@@ -101,7 +101,7 @@ namespace Chef
                 }
             }
         }
-        static void CreateSalad()
+        private static void CreateSalad()
         {
             if (vegetablesStorage.Count != 0)
             {
@@ -156,7 +156,7 @@ namespace Chef
                 Console.WriteLine("Требуются ингредиенты!");
             }
         }
-        static void CheckStorage()
+        private static void CheckStorage()
         {
             if (vegetablesStorage.Count != 0)
             {
@@ -196,7 +196,7 @@ namespace Chef
                 Console.WriteLine("Склад пуст!");
             }
         }
-        static void CheckSalads()
+        private static void CheckSalads()
         {
             if (salads.Count != 0)
             {
@@ -234,7 +234,7 @@ namespace Chef
                 Console.WriteLine("Салаты отсутствуют!");
             }
         }
-        static void SaladAction(int num)
+        private static void SaladAction(int num)
         {
             salads[num].ShowComposition();
             salads[num].CountCalories();
@@ -277,7 +277,7 @@ namespace Chef
                 }
             }
         }
-        static void ChooseRoot()
+        private static void ChooseRoot()
         {
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
@@ -313,7 +313,7 @@ namespace Chef
                 }
             }
         }
-        static void ChooseFetus()
+        private static void ChooseFetus()
         {
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
@@ -349,7 +349,7 @@ namespace Chef
                 }
             }
         }
-        static void ChooseOnion()
+        private static void ChooseOnion()
         {
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
@@ -385,7 +385,7 @@ namespace Chef
                 }
             }
         }
-        static void ChooseGreen()
+        private static void ChooseGreen()
         {
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
@@ -421,7 +421,7 @@ namespace Chef
                 }
             }
         }
-        static void ChooseLeaf()
+        private static void ChooseLeaf()
         {
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
@@ -457,7 +457,7 @@ namespace Chef
                 }
             }
         }
-        static void ChooseSpice()
+        private static void ChooseSpice()
         {
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)

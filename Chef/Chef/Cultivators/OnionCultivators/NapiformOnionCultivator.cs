@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Cultivators.OnionCultivators
 {
-    class NapiformOnionCultivator : OnionCultivator
+    internal class NapiformOnionCultivator : OnionCultivator
     {
         public override Vegetables.Onions.Onion CultivateOnion()
         {

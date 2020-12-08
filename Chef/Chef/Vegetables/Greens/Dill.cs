@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Greens
 {
-    class Dill : Green
+    internal class Dill : Green
     {
-        double mn;
+        private double mn;
+        private double cr;
+        private double co;
         public double Mn
         {
             get { return mn; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Greens
                     mn = value;
             }
         }
-        double cr;
         public double Cr
         {
             get { return cr; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Greens
                     cr = value;
             }
         }
-        double co;
         public double Co
         {
             get { return co; }

@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Greens
 {
-    class Parsley : Green
+    internal class Parsley : Green
     {
-        double ca;
+        private double ca;
+        private double si;
+        private double mg;
         public double Ca
         {
             get { return ca; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Greens
                     ca = value;
             }
         }
-        double si;
         public double Si
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Greens
                     si = value;
             }
         }
-        double mg;
         public double Mg
         {
             get { return mg; }

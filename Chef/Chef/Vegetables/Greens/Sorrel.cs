@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Greens
 {
-    class Sorrel : Green
+    internal class Sorrel : Green
     {
-        double mg;
+        private double mg;
+        private double cu;
+        private double p;
         public double Mg
         {
             get { return mg; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Greens
                     mg = value;
             }
         }
-        double cu;
         public double Cu
         {
             get { return cu; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Greens
                     cu = value;
             }
         }
-        double p;
         public double P
         {
             get { return p; }

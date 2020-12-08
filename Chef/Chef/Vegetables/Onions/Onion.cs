@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Vegetables.Onions
 {
-    abstract class Onion : Vegetable
+    internal abstract class Onion : Vegetable
     {
         public Onion(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
@@ -16,7 +16,6 @@ namespace Chef.Vegetables.Onions
             base.Handle();
             Console.WriteLine("Очистили луковицу от чешуек...");
         }
-
         public override void GetInformation()
         {
             base.GetInformation();

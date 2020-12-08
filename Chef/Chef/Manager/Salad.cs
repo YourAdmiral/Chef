@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Chef.Manager
 {
-    class Salad
+    internal class Salad
     {
         public string Name { get; set; }
-        List<Vegetables.Vegetable> composition = new List<Vegetables.Vegetable>();
+        private List<Vegetables.Vegetable> composition = new List<Vegetables.Vegetable>();
         public Salad(string name)
         {
             Name = name;
@@ -25,9 +25,8 @@ namespace Chef.Manager
         }
         public void AddVegetables(List<Vegetables.Vegetable> vegetables)
         {
-            composition.AddRange(vegetables);
-            foreach (var item in vegetables)
-                item.Handle();
+            foreach (var vegetable in vegetables)
+                AddVegetable(vegetable);
         }
         public void CountCalories()
         {

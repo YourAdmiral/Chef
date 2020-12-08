@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Leafs
 {
-    class WhiteCabbage : Leaf
+    internal class WhiteCabbage : Leaf
     {
-        double co;
+        private double co;
+        private double mo;
+        private double cr;
         public double Co 
         {
             get { return co; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Leafs
                     co = value;
             }
         }
-        double mo;
         public double Mo 
         {
             get { return mo; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Leafs
                     mo = value;
             }
         }
-        double cr;
         public double Cr 
         {
             get { return cr; }

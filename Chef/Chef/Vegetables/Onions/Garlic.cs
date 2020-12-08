@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Onions
 {
-    class Garlic : Onion
+    internal class Garlic : Onion
     {
-        double co;
+        private double co;
+        private double cr;
+        private double mn;
         public double Co
         {
             get { return co; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Onions
                     co = value;
             }
         }
-        double cr;
         public double Cr
         {
             get { return cr; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Onions
                     cr = value;
             }
         }
-        double mn;
         public double Mn
         {
             get { return mn; }

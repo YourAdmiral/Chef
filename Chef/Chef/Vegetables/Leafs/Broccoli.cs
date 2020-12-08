@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Leafs
 {
-    class Broccoli : Leaf
+    internal class Broccoli : Leaf
     {
-        double fe;
+        private double fe;
+        private double i;
+        private double mn;
         public double Fe 
         {
             get { return fe; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Leafs
                     fe = value;
             }
         }
-        double i;
         public double I 
         {
             get { return i; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Leafs
                     i = value;
             }
         }
-        double mn;
         public double Mn {
             get { return mn; }
             set

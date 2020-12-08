@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Cultivators.SpiceCultivators
 {
-    abstract class SpiceCultivator : Cultivator
+    internal abstract class SpiceCultivator : Cultivator
     {
         public abstract Vegetables.Spices.Spice CultivateSpice();
     }

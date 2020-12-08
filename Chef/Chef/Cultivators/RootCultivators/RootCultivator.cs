@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Cultivators.RootCultivators
 {
-    abstract class RootCultivator : Cultivator
+    internal abstract class RootCultivator : Cultivator
     {
         public abstract Vegetables.Roots.Root CultivateRoot();
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Cultivators.GreenCultivators
 {
-    class DillCultivator : GreenCultivator
+    internal class DillCultivator : GreenCultivator
     {
         public override Vegetables.Greens.Green CultivateGreen()
         {

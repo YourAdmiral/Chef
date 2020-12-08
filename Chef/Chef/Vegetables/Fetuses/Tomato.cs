@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Fetuses
 {
-    class Tomato : Fetus
+    internal class Tomato : Fetus
     {
-        double co;
+        private double co;
+        private double si;
+        private double c;
         public double Co 
         {
             get { return co; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Fetuses
                     co = value;
             }
         }
-        double si;
         public double Si 
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Fetuses
                     si = value;
             }
         }
-        double c;
         public double C 
         {
             get { return c; }

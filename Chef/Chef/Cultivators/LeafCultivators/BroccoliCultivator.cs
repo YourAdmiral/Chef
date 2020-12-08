@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Cultivators.LeafCultivators
 {
-    class BroccoliCultivator : LeafCultivator
+    internal class BroccoliCultivator : LeafCultivator
     {
         public override Vegetables.Leafs.Leaf CultivateLeaf()
         {

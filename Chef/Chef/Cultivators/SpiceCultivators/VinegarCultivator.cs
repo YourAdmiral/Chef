@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Cultivators.SpiceCultivators
 {
-    class VinegarCultivator : SpiceCultivator
+    internal class VinegarCultivator : SpiceCultivator
     {
         public override Vegetables.Spices.Spice CultivateSpice()
         {

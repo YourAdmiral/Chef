@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Spices
 {
-    class Vinegar : Spice
+    internal class Vinegar : Spice
     {
-        double ca;
+        private double ca;
+        private double mg;
+        private double na;
         public double Ca
         {
             get
@@ -19,7 +21,6 @@ namespace Chef.Vegetables.Spices
                     Ca = value;
             }
         }
-        double mg;
         public double Mg
         {
             get { return mg; }
@@ -29,7 +30,6 @@ namespace Chef.Vegetables.Spices
                     mg = value;
             }
         }
-        double na;
         public double Na
         {
             get { return na; }

@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Leafs
 {
-    class Kohlrabi : Leaf
+    internal class Kohlrabi : Leaf
     {
-        double ca;
+        private double ca;
+        private double mg;
+        private double p;
         public double Ca 
         {
             get 
@@ -19,7 +21,6 @@ namespace Chef.Vegetables.Leafs
                     ca = value;
             }
         }
-        double mg;
         public double Mg 
         {
             get { return mg; }
@@ -29,7 +30,6 @@ namespace Chef.Vegetables.Leafs
                     mg = value;
             }
         }
-        double p;
         public double P 
         {
             get { return p; }

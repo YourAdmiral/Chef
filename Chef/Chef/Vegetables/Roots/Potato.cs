@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Roots
 {
-    class Potato:Root
+    internal class Potato:Root
     {
-        double k;
+        private double k;
+        private double si;
+        private double co;
         public double K 
         {
             get { return k; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Roots
                     k = value;
             }
         }
-        double si;
         public double Si 
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Roots
                     si = value;
             }
         }
-        double co;
         public double Co 
         {
             get { return co; }

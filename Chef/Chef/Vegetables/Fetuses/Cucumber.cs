@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Fetuses
 {
-    class Cucumber : Fetus
+    internal class Cucumber : Fetus
     {
-        double k;
+        private double k;
+        private double si;
+        private double cr;
         public double K 
         {
             get { return k; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Fetuses
                     k = value;
             }
         }
-        double si;
         public double Si 
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Fetuses
                     si = value;
             }
         }
-        double cr;
         public double Cr 
         {
             get { return cr; }

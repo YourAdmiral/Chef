@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Cultivators.FetusCultivators
 {
-    class CucumberCultivator : FetusCultivator
+    internal class CucumberCultivator : FetusCultivator
     {
         public override Vegetables.Fetuses.Fetus CultivateFetus()
         {
