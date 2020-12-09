@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Spices;
 
 namespace Chef.Cultivators.SpiceCultivators
 {
     internal class SaltCultivator : SpiceCultivator
     {
-        public override Vegetables.Spices.Spice CultivateSpice()
+        public override Spice CultivateSpice()
         {
-            return new Vegetables.Spices.Salt
+            return new Salt
                 (
                 WriteSort(),
                 WriteColor(),

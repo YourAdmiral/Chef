@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Onions;
 
 namespace Chef.Cultivators.OnionCultivators
 {
     internal class NapiformOnionCultivator : OnionCultivator
     {
-        public override Vegetables.Onions.Onion CultivateOnion()
+        public override Onion CultivateOnion()
         {
-            return new Vegetables.Onions.NapiformOnion
+            return new NapiformOnion
                 (
                 WriteSort(),
                 WriteColor(),

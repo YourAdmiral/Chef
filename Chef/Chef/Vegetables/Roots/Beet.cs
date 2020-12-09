@@ -56,7 +56,7 @@ namespace Chef.Vegetables.Roots
             base.Handle();
             Console.WriteLine("Нарезали свеклу...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Свекла";
         }

@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Chef.Vegetables;
 
 namespace Chef.Manager
 {
     internal class Salad
     {
         public string Name { get; set; }
-        private List<Vegetables.Vegetable> composition = new List<Vegetables.Vegetable>();
+        private List<Vegetable> composition = new List<Vegetable>();
         public Salad(string name)
         {
             Name = name;
         }
-        public Salad(string name, List<Vegetables.Vegetable> composition)
+        public Salad(string name, List<Vegetable> composition)
         {
             Name = name;
             AddVegetables(composition);
         }
-        public void AddVegetable(Vegetables.Vegetable vegetable)
+        public void AddVegetable(Vegetable vegetable)
         {
             composition.Add(vegetable);
             vegetable.Handle();
         }
-        public void AddVegetables(List<Vegetables.Vegetable> vegetables)
+        public void AddVegetables(List<Vegetable> vegetables)
         {
             foreach (var vegetable in vegetables)
                 AddVegetable(vegetable);
@@ -64,7 +65,7 @@ namespace Chef.Manager
             {
                 foreach (var item in composition)
                 {
-                    Console.WriteLine(item.GetVegetableName() + " \"" + item.Sort + "\" " + item.Weight + " г.");
+                    Console.WriteLine(item.GetName() + " \"" + item.Sort + "\" " + item.Weight + " г.");
                 }
             }
             else
@@ -114,7 +115,7 @@ namespace Chef.Manager
                     Console.WriteLine("Ингридиенты соответствующие заданному диапазону калорийности (" + num1 + " - " + num2 + "): ");
                     foreach (var item in selectedVegetables)
                     {
-                        Console.WriteLine(item.GetVegetableName() + " \"" + item.Sort + "\" " + item.Calories + " ккал.");
+                        Console.WriteLine(item.GetName() + " \"" + item.Sort + "\" " + item.Calories + " ккал.");
                     }
                 }
                 else

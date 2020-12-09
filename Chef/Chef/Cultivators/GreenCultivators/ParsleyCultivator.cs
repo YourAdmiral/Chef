@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Greens;
 
 namespace Chef.Cultivators.GreenCultivators
 {
     internal class ParsleyCultivator : GreenCultivator
     {
-        public override Vegetables.Greens.Green CultivateGreen()
+        public override Green CultivateGreen()
         {
-            return new Vegetables.Greens.Parsley
+            return new Parsley
                 (
                 WriteSort(),
                 WriteColor(),

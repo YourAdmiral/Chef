@@ -1,19 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Chef.Cultivators.FetusCultivators;
+using Chef.Cultivators.OnionCultivators;
+using Chef.Cultivators.SpiceCultivators;
+using Chef.Cultivators.LeafCultivators;
+using Chef.Cultivators.GreenCultivators;
+using Chef.Cultivators.RootCultivators;
+using Chef.Vegetables;
+using Chef.Manager;
 
 namespace Chef
 {
     internal class Cook
     {
-        private static List<Vegetables.Vegetable> vegetablesStorage = new List<Vegetables.Vegetable>();
-        private static List<Manager.Salad> salads = new List<Manager.Salad>();
-        private static Cultivators.RootCultivators.RootCultivator rootCultivator;
-        private static Cultivators.FetusCultivators.FetusCultivator fetusCultivator;
-        private static Cultivators.OnionCultivators.OnionCultivator onionCultivator;
-        private static Cultivators.GreenCultivators.GreenCultivator greenCultivator;
-        private static Cultivators.LeafCultivators.LeafCultivator leafCultivator;
-        private static Cultivators.SpiceCultivators.SpiceCultivator spiceCultivator;
+        private static List<Vegetable> vegetables = new List<Vegetable>();
+        private static List<Salad> salads = new List<Salad>();
+        private static RootCultivator rootCultivator;
+        private static FetusCultivator fetusCultivator;
+        private static OnionCultivator onionCultivator;
+        private static GreenCultivator greenCultivator;
+        private static LeafCultivator leafCultivator;
+        private static SpiceCultivator spiceCultivator;
         private static void Main(string[] args)
         {
             Choose();
@@ -103,19 +111,19 @@ namespace Chef
         }
         private static void CreateSalad()
         {
-            if (vegetablesStorage.Count != 0)
+            if (vegetables.Count != 0)
             {
                 Console.WriteLine("Выберите название для салата: ");
                 string name = Console.ReadLine();
-                List<Vegetables.Vegetable> composition = new List<Vegetables.Vegetable>();
+                List<Vegetable> composition = new List<Vegetable>();
                 string choose = null;
                 int num;
                 while (choose != "0")
                 {
                     Console.WriteLine("Выберите что добавить в салат:");
-                    for (int i = 0; i < vegetablesStorage.Count; i++)
+                    for (int i = 0; i < vegetables.Count; i++)
                     {
-                        Console.WriteLine(i + 1 + " - " + vegetablesStorage[i].GetVegetableName() + " \"" + vegetablesStorage[i].Sort + "\"");
+                        Console.WriteLine(i + 1 + " - " + vegetables[i].GetName() + " \"" + vegetables[i].Sort + "\"");
                     }
                     Console.WriteLine("0 - Приготовить");
                     try
@@ -125,16 +133,16 @@ namespace Chef
                         if (choose != "0")
                         {
                             Console.WriteLine("В салат был добавлен: " +
-                            vegetablesStorage[num].GetVegetableName() +
-                            " \"" + vegetablesStorage[num].Sort + "\"");
-                            composition.Add(vegetablesStorage[num]);
-                            vegetablesStorage.RemoveAt(num);
+                            vegetables[num].GetName() +
+                            " \"" + vegetables[num].Sort + "\"");
+                            composition.Add(vegetables[num]);
+                            vegetables.RemoveAt(num);
                         }
                         else
                         {
                             if (composition.Count != 0)
                             {
-                                salads.Add(new Manager.Salad(name, composition));
+                                salads.Add(new Salad(name, composition));
                                 Console.WriteLine("Салат \"" + name + "\" готов!");
                                 break;
                             }
@@ -158,16 +166,16 @@ namespace Chef
         }
         private static void CheckStorage()
         {
-            if (vegetablesStorage.Count != 0)
+            if (vegetables.Count != 0)
             {
                 string choose = null;
                 int num;
                 Console.WriteLine("Ингредиенты имеющиеся на складе: ");
-                for (int i = 0; i < vegetablesStorage.Count; i++)
+                for (int i = 0; i < vegetables.Count; i++)
                 {
-                    Console.WriteLine(i + 1 + " - " + vegetablesStorage[i].GetVegetableName() + " \"" +
-                        vegetablesStorage[i].Sort + "\" " +
-                        vegetablesStorage[i].Weight + " г.");
+                    Console.WriteLine(i + 1 + " - " + vegetables[i].GetName() + " \"" +
+                        vegetables[i].Sort + "\" " +
+                        vegetables[i].Weight + " г.");
                 }
                 Console.WriteLine("0 - Вернуться");
                 while (choose != "0")
@@ -178,7 +186,7 @@ namespace Chef
                         num = Convert.ToInt32(choose) - 1;
                         if (choose != "0")
                         {
-                            vegetablesStorage[num].GetInformation();
+                            vegetables[num].GetInformation();
                         }
                         else
                         {
@@ -294,16 +302,16 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        rootCultivator = new Cultivators.RootCultivators.PotatoCultivator();
-                        vegetablesStorage.Add(rootCultivator.CultivateRoot());
+                        rootCultivator = new PotatoCultivator();
+                        vegetables.Add(rootCultivator.CultivateRoot());
                         break;
                     case ConsoleKey.D2:
-                        rootCultivator = new Cultivators.RootCultivators.CarrotCultivator();
-                        vegetablesStorage.Add(rootCultivator.CultivateRoot());
+                        rootCultivator = new CarrotCultivator();
+                        vegetables.Add(rootCultivator.CultivateRoot());
                         break;
                     case ConsoleKey.D3:
-                        rootCultivator = new Cultivators.RootCultivators.BeetCultivator();
-                        vegetablesStorage.Add(rootCultivator.CultivateRoot());
+                        rootCultivator = new BeetCultivator();
+                        vegetables.Add(rootCultivator.CultivateRoot());
                         break;
                     case ConsoleKey.D0:
                         break;
@@ -330,16 +338,16 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        fetusCultivator = new Cultivators.FetusCultivators.TomatoCultivator();
-                        vegetablesStorage.Add(fetusCultivator.CultivateFetus());
+                        fetusCultivator = new TomatoCultivator();
+                        vegetables.Add(fetusCultivator.CultivateFetus());
                         break;
                     case ConsoleKey.D2:
-                        fetusCultivator = new Cultivators.FetusCultivators.PepperCultivator();
-                        vegetablesStorage.Add(fetusCultivator.CultivateFetus());
+                        fetusCultivator = new PepperCultivator();
+                        vegetables.Add(fetusCultivator.CultivateFetus());
                         break;
                     case ConsoleKey.D3:
-                        fetusCultivator = new Cultivators.FetusCultivators.CucumberCultivator();
-                        vegetablesStorage.Add(fetusCultivator.CultivateFetus());
+                        fetusCultivator = new CucumberCultivator();
+                        vegetables.Add(fetusCultivator.CultivateFetus());
                         break;
                     case ConsoleKey.D0:
                         break;
@@ -366,16 +374,16 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        onionCultivator = new Cultivators.OnionCultivators.GarlicCultivator();
-                        vegetablesStorage.Add(onionCultivator.CultivateOnion());
+                        onionCultivator = new GarlicCultivator();
+                        vegetables.Add(onionCultivator.CultivateOnion());
                         break;
                     case ConsoleKey.D2:
-                        onionCultivator = new Cultivators.OnionCultivators.LeekOnionCultivator();
-                        vegetablesStorage.Add(onionCultivator.CultivateOnion());
+                        onionCultivator = new LeekOnionCultivator();
+                        vegetables.Add(onionCultivator.CultivateOnion());
                         break;
                     case ConsoleKey.D3:
-                        onionCultivator = new Cultivators.OnionCultivators.NapiformOnionCultivator();
-                        vegetablesStorage.Add(onionCultivator.CultivateOnion());
+                        onionCultivator = new NapiformOnionCultivator();
+                        vegetables.Add(onionCultivator.CultivateOnion());
                         break;
                     case ConsoleKey.D0:
                         break;
@@ -402,16 +410,16 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        greenCultivator = new Cultivators.GreenCultivators.SorrelCultivator();
-                        vegetablesStorage.Add(greenCultivator.CultivateGreen());
+                        greenCultivator = new SorrelCultivator();
+                        vegetables.Add(greenCultivator.CultivateGreen());
                         break;
                     case ConsoleKey.D2:
-                        greenCultivator = new Cultivators.GreenCultivators.ParsleyCultivator();
-                        vegetablesStorage.Add(greenCultivator.CultivateGreen());
+                        greenCultivator = new ParsleyCultivator();
+                        vegetables.Add(greenCultivator.CultivateGreen());
                         break;
                     case ConsoleKey.D3:
-                        greenCultivator = new Cultivators.GreenCultivators.DillCultivator();
-                        vegetablesStorage.Add(greenCultivator.CultivateGreen());
+                        greenCultivator = new DillCultivator();
+                        vegetables.Add(greenCultivator.CultivateGreen());
                         break;
                     case ConsoleKey.D0:
                         break;
@@ -438,16 +446,16 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        leafCultivator = new Cultivators.LeafCultivators.WhiteCabbageCultivator();
-                        vegetablesStorage.Add(leafCultivator.CultivateLeaf());
+                        leafCultivator = new WhiteCabbageCultivator();
+                        vegetables.Add(leafCultivator.CultivateLeaf());
                         break;
                     case ConsoleKey.D2:
-                        leafCultivator = new Cultivators.LeafCultivators.BroccoliCultivator();
-                        vegetablesStorage.Add(leafCultivator.CultivateLeaf());
+                        leafCultivator = new BroccoliCultivator();
+                        vegetables.Add(leafCultivator.CultivateLeaf());
                         break;
                     case ConsoleKey.D3:
-                        leafCultivator = new Cultivators.LeafCultivators.KohlrabiCultivator();
-                        vegetablesStorage.Add(leafCultivator.CultivateLeaf());
+                        leafCultivator = new KohlrabiCultivator();
+                        vegetables.Add(leafCultivator.CultivateLeaf());
                         break;
                     case ConsoleKey.D0:
                         break;
@@ -474,16 +482,16 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        spiceCultivator = new Cultivators.SpiceCultivators.SaltCultivator();
-                        vegetablesStorage.Add(spiceCultivator.CultivateSpice());
+                        spiceCultivator = new SaltCultivator();
+                        vegetables.Add(spiceCultivator.CultivateSpice());
                         break;
                     case ConsoleKey.D2:
-                        spiceCultivator = new Cultivators.SpiceCultivators.SugarCultivator();
-                        vegetablesStorage.Add(spiceCultivator.CultivateSpice());
+                        spiceCultivator = new SugarCultivator();
+                        vegetables.Add(spiceCultivator.CultivateSpice());
                         break;
                     case ConsoleKey.D3:
-                        spiceCultivator = new Cultivators.SpiceCultivators.VinegarCultivator();
-                        vegetablesStorage.Add(spiceCultivator.CultivateSpice());
+                        spiceCultivator = new VinegarCultivator();
+                        vegetables.Add(spiceCultivator.CultivateSpice());
                         break;
                     case ConsoleKey.D0:
                         break;

@@ -56,7 +56,7 @@ namespace Chef.Vegetables.Onions
             base.Handle();
             Console.WriteLine("Нарезали лук-порей...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Лук-порей";
         }

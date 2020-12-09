@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Roots;
 
 namespace Chef.Cultivators.RootCultivators
 {
     internal class CarrotCultivator : RootCultivator
     {
-        public override Vegetables.Roots.Root CultivateRoot()
+        public override Root CultivateRoot()
         {
-            return new Vegetables.Roots.Carrot
+            return new Carrot
                 (
                 WriteSort(),
                 WriteColor(),

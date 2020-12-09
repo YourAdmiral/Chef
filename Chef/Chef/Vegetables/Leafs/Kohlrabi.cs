@@ -59,7 +59,7 @@ namespace Chef.Vegetables.Leafs
             base.Handle();
             Console.WriteLine("Нашинковали кольраби...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Кольраби";
         }
