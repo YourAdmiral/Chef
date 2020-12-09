@@ -11,33 +11,33 @@ namespace Chef.Cultivators.GreenCultivators
         {
             return new Dill
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteMn(),
-                WriteCr(),
-                WriteCo()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetMn(),
+                GetCr(),
+                GetCo()
                 );
         }
-        protected double WriteMn()
+        protected double GetMn()
         {
             Console.WriteLine("Введите количество марганца (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCr()
+        protected double GetCr()
         {
             Console.WriteLine("Введите количество хрома (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCo()
+        protected double GetCo()
         {
             Console.WriteLine("Введите количество оксида углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

@@ -11,33 +11,33 @@ namespace Chef.Cultivators.FetusCultivators
         {
             return new Tomato
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteCo(),
-                WriteC(),
-                WriteSi()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetCo(),
+                GetC(),
+                GetSi()
                 );
         }
-        protected double WriteCo()
+        protected double GetCo()
         {
             Console.WriteLine("Введите количество оксида углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteC()
+        protected double GetC()
         {
             Console.WriteLine("Введите количество углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteSi()
+        protected double GetSi()
         {
             Console.WriteLine("Введите количество кремния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

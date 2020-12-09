@@ -11,33 +11,33 @@ namespace Chef.Cultivators.SpiceCultivators
         {
             return new Salt
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteNa(),
-                WriteCl(),
-                WriteMo()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetNa(),
+                GetCl(),
+                GetMo()
                 );
         }
-        protected double WriteNa()
+        protected double GetNa()
         {
             Console.WriteLine("Введите количество натрия (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCl()
+        protected double GetCl()
         {
             Console.WriteLine("Введите количество хлора (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMo()
+        protected double GetMo()
         {
             Console.WriteLine("Введите количество молибдена (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

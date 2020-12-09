@@ -11,33 +11,33 @@ namespace Chef.Cultivators.LeafCultivators
         {
             return new WhiteCabbage
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteCo(),
-                WriteMo(),
-                WriteCr()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetCo(),
+                GetMo(),
+                GetCr()
                 );
         }
-        protected double WriteCo()
+        protected double GetCo()
         {
             Console.WriteLine("Введите количество оксида углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMo()
+        protected double GetMo()
         {
             Console.WriteLine("Введите количество молибдена (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCr()
+        protected double GetCr()
         {
             Console.WriteLine("Введите количество хрома (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

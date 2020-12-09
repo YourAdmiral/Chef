@@ -11,33 +11,33 @@ namespace Chef.Cultivators.RootCultivators
         {
             return new Carrot
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteSi(),
-                WriteMo(),
-                WriteCo()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetSi(),
+                GetMo(),
+                GetCo()
                 );
         }
-        protected double WriteSi()
+        protected double GetSi()
         {
             Console.WriteLine("Введите количество кремния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMo()
+        protected double GetMo()
         {
             Console.WriteLine("Введите количество молибдена (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCo()
+        protected double GetCo()
         {
             Console.WriteLine("Введите количество оксида углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

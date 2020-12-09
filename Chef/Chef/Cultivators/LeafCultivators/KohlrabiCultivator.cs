@@ -11,33 +11,33 @@ namespace Chef.Cultivators.LeafCultivators
         {
             return new Kohlrabi
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteCa(),
-                WriteMg(),
-                WriteP()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetCa(),
+                GetMg(),
+                GetP()
                 );
         }
-        protected double WriteCa()
+        protected double GetCa()
         {
             Console.WriteLine("Введите количество кальция (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMg()
+        protected double GetMg()
         {
             Console.WriteLine("Введите количество магния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteP()
+        protected double GetP()
         {
             Console.WriteLine("Введите количество фосфора (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

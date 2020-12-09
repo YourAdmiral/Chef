@@ -11,33 +11,33 @@ namespace Chef.Cultivators.FetusCultivators
         {
             return new Cucumber
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteK(),
-                WriteSi(),
-                WriteCr()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetK(),
+                GetSi(),
+                GetCr()
                 );
         }
-        protected double WriteK()
+        protected double GetK()
         {
             Console.WriteLine("Введите количество калия (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteSi()
+        protected double GetSi()
         {
             Console.WriteLine("Введите количество кремния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCr()
+        protected double GetCr()
         {
             Console.WriteLine("Введите количество хрома (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

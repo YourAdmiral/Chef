@@ -11,33 +11,33 @@ namespace Chef.Cultivators.LeafCultivators
         {
             return new Broccoli
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteFe(),
-                WriteI(),
-                WriteMn()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetFe(),
+                GetI(),
+                GetMn()
                 );
         }
-        protected double WriteFe()
+        protected double GetFe()
         {
             Console.WriteLine("Введите количество железа (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteI()
+        protected double GetI()
         {
             Console.WriteLine("Введите количество йода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMn()
+        protected double GetMn()
         {
             Console.WriteLine("Введите количество марганца (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

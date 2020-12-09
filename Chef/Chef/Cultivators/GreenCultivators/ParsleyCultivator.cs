@@ -11,33 +11,33 @@ namespace Chef.Cultivators.GreenCultivators
         {
             return new Parsley
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteCa(),
-                WriteSi(),
-                WriteMg()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetCa(),
+                GetSi(),
+                GetMg()
                 );
         }
-        protected double WriteCa()
+        protected double GetCa()
         {
             Console.WriteLine("Введите количество кальция (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteSi()
+        protected double GetSi()
         {
             Console.WriteLine("Введите количество кремния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMg()
+        protected double GetMg()
         {
             Console.WriteLine("Введите количество магния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

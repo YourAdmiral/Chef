@@ -11,33 +11,33 @@ namespace Chef.Cultivators.FetusCultivators
         {
             return new Pepper
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteC(),
-                WriteSi(),
-                WriteCu()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetC(),
+                GetSi(),
+                GetCu()
                 );
         }
-        protected double WriteC()
+        protected double GetC()
         {
             Console.WriteLine("Введите количество углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteSi()
+        protected double GetSi()
         {
             Console.WriteLine("Введите количество кремния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCu()
+        protected double GetCu()
         {
             Console.WriteLine("Введите количество меди (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }
