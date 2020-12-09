@@ -49,10 +49,10 @@ namespace Chef.Vegetables.Spices
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Кальций - " + Ca + " г.\n" +
-                "Натрий - " + Na + " г.\n" +
-                "Железо - " + Fe + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Кальций - {Ca} г.\n" +
+                $"Натрий - {Na} г.\n" +
+                $"Железо - {Fe} г.");
         }
         public override void Handle()
         {

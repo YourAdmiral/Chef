@@ -36,7 +36,7 @@ namespace Chef.Manager
             {
                 calories += item.Calories;
             }
-            Console.WriteLine("В данном салате содержится " + calories + " ккал калорий.");
+            Console.WriteLine($"В данном салате содержится {calories} ккал калорий.");
         }
         public void SortByProteins()
         {
@@ -60,12 +60,12 @@ namespace Chef.Manager
         }
         public void ShowComposition()
         {
-            Console.WriteLine("Состав салата \"" + Name + "\" включает в себя: ");
+            Console.WriteLine($"Состав салата \"{Name}\" включает в себя: ");
             if (composition.Count != 0)
             {
                 foreach (var item in composition)
                 {
-                    Console.WriteLine(item.GetName() + " \"" + item.Sort + "\" " + item.Weight + " г.");
+                    Console.WriteLine($"{item.GetName()} \"{item.Sort}\" {item.Weight} г.");
                 }
             }
             else
@@ -112,10 +112,10 @@ namespace Chef.Manager
                 var selectedVegetables = composition.Where(v => (v.Calories >= num1) && (v.Calories <= num2)).OrderBy(v => v);
                 if (selectedVegetables.Count() != 0)
                 {
-                    Console.WriteLine("Ингридиенты соответствующие заданному диапазону калорийности (" + num1 + " - " + num2 + "): ");
+                    Console.WriteLine($"Ингридиенты соответствующие заданному диапазону калорийности ({num1} - {num2}): ");
                     foreach (var item in selectedVegetables)
                     {
-                        Console.WriteLine(item.GetName() + " \"" + item.Sort + "\" " + item.Calories + " ккал.");
+                        Console.WriteLine($"{item.GetName()} \"{item.Sort}\" {item.Calories} ккал.");
                     }
                 }
                 else

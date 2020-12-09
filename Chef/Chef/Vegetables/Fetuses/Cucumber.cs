@@ -46,10 +46,10 @@ namespace Chef.Vegetables.Fetuses
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Калий - " + K + " г.\n" +
-                "Кремний - " + Si + " г.\n" +
-                "Хром - " + Cr + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Калий - {K} г.\n" +
+                $"Кремний - {Si} г.\n" +
+                $"Хром - {Cr} г.");
         }
         public override void Handle()
         {

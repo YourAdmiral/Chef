@@ -46,10 +46,10 @@ namespace Chef.Vegetables.Roots
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Кремний - " + Si + " г.\n" +
-                "Молибден - " + Mo + " г.\n" +
-                "Оксид углерода - " + Co + " г.");
+            Console.WriteLine($"Минералы и витамины: \n" +
+                $"Кремний - {Si} г.\n" +
+                $"Молибден - {Mo} г.\n" +
+                $"Оксид углерода - {Co} г.");
         }
         public override void Handle()
         {

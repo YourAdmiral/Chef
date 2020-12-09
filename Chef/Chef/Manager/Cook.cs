@@ -122,9 +122,7 @@ namespace Chef
                 {
                     Console.WriteLine("Выберите что добавить в салат:");
                     for (int i = 0; i < vegetables.Count; i++)
-                    {
                         Console.WriteLine(i + 1 + " - " + vegetables[i].GetName() + " \"" + vegetables[i].Sort + "\"");
-                    }
                     Console.WriteLine("0 - Приготовить");
                     try
                     {
@@ -132,9 +130,7 @@ namespace Chef
                         num = Convert.ToInt32(choose) - 1;
                         if (choose != "0")
                         {
-                            Console.WriteLine("В салат был добавлен: " +
-                            vegetables[num].GetName() +
-                            " \"" + vegetables[num].Sort + "\"");
+                            Console.WriteLine($"В салат был добавлен: {vegetables[num].GetName()} \"{vegetables[num].Sort}\"");
                             composition.Add(vegetables[num]);
                             vegetables.RemoveAt(num);
                         }
@@ -143,7 +139,7 @@ namespace Chef
                             if (composition.Count != 0)
                             {
                                 salads.Add(new Salad(name, composition));
-                                Console.WriteLine("Салат \"" + name + "\" готов!");
+                                Console.WriteLine($"Салат \"{name}\" готов!");
                                 break;
                             }
                             else
@@ -172,11 +168,7 @@ namespace Chef
                 int num;
                 Console.WriteLine("Ингредиенты имеющиеся на складе: ");
                 for (int i = 0; i < vegetables.Count; i++)
-                {
-                    Console.WriteLine(i + 1 + " - " + vegetables[i].GetName() + " \"" +
-                        vegetables[i].Sort + "\" " +
-                        vegetables[i].Weight + " г.");
-                }
+                    Console.WriteLine($"{i + 1} - {vegetables[i].GetName()} \"{vegetables[i].Sort}\" {vegetables[i].Weight} г.");
                 Console.WriteLine("0 - Вернуться");
                 while (choose != "0")
                 {
@@ -185,13 +177,9 @@ namespace Chef
                         choose = Console.ReadLine();
                         num = Convert.ToInt32(choose) - 1;
                         if (choose != "0")
-                        {
                             vegetables[num].GetInformation();
-                        }
                         else
-                        {
                             break;
-                        }
                     }
                     catch (Exception)
                     {
@@ -214,22 +202,16 @@ namespace Chef
                 {
                     Console.WriteLine("Салаты имеющиеся в меню: ");
                     for (int i = 0; i < salads.Count; i++)
-                    {
-                        Console.WriteLine(i + 1 + " - " + salads[i].Name);
-                    }
+                        Console.WriteLine($"{i + 1} - {salads[i].Name}");
                     Console.WriteLine("0 - Вернуться");
                     try
                     {
                         choose = Console.ReadLine();
                         num = Convert.ToInt32(choose) - 1;
                         if (choose != "0")
-                        {
                             SaladAction(num);
-                        }
                         else
-                        {
                             break;
-                        }
                     }
                     catch (Exception)
                     {
@@ -249,7 +231,7 @@ namespace Chef
             string choose = null;
             while (choose != "0")
             {
-                Console.WriteLine("Выберите действие над салатом \"" + salads[num].Name + "\":");
+                Console.WriteLine($"Выберите действие над салатом \"{salads[num].Name}\":");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
                 "1 - Сортировать состав салата по калориям\n" +

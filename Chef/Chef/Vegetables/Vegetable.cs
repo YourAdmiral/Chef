@@ -109,7 +109,7 @@ namespace Chef.Vegetables
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ошибка: " + ex.Message);
+                Console.WriteLine($"Ошибка: {ex.Message}");
                 return false;
             }
         }
@@ -123,7 +123,7 @@ namespace Chef.Vegetables
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ошибка: " + ex.Message);
+                Console.WriteLine($"Ошибка: {ex.Message}");
                 return false;
             }
         }

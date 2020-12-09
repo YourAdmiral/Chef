@@ -46,10 +46,10 @@ namespace Chef.Vegetables.Leafs
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Оксид углерода - " + Co + " г.\n" +
-                "Молибден - " + Mo + " г.\n" +
-                "Хром - " + Cr + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Оксид углерода - {Co} г.\n" +
+                $"Молибден - {Mo} г.\n" +
+                $"Хром - {Cr} г.");
         }
         public override void Handle()
         {

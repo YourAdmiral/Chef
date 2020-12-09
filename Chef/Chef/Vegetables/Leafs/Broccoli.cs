@@ -45,10 +45,10 @@ namespace Chef.Vegetables.Leafs
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Железо - " + Fe + " г.\n" +
-                "Йод - " + I + " г.\n" +
-                "Марганец - " + Mn + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Железо - {Fe} г.\n" +
+                $"Йод - {I} г.\n" +
+                $"Марганец - {Mn} г.");
         }
         public override void Handle()
         {
