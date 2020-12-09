@@ -11,33 +11,33 @@ namespace Chef.Cultivators.RootCultivators
         {
             return new Potato
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteK(),
-                WriteSi(),
-                WriteCo()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetK(),
+                GetSi(),
+                GetCo()
                 );
         }
-        protected double WriteK()
+        protected double GetK()
         {
             Console.WriteLine("Введите количество калия (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteSi()
+        protected double GetSi()
         {
             Console.WriteLine("Введите количество кремния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCo()
+        protected double GetCo()
         {
             Console.WriteLine("Введите количество оксида углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

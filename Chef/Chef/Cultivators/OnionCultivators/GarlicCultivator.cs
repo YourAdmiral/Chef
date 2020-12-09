@@ -11,33 +11,33 @@ namespace Chef.Cultivators.OnionCultivators
         {
             return new Garlic
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteCo(),
-                WriteCr(),
-                WriteMn()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetCo(),
+                GetCr(),
+                GetMn()
                 );
         }
-        protected double WriteCo()
+        protected double GetCo()
         {
             Console.WriteLine("Введите количество оксида углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCr()
+        protected double GetCr()
         {
             Console.WriteLine("Введите количество хрома (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMn()
+        protected double GetMn()
         {
             Console.WriteLine("Введите количество марганца (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

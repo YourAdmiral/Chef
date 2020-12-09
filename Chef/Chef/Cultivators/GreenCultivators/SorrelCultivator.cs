@@ -11,33 +11,33 @@ namespace Chef.Cultivators.GreenCultivators
         {
             return new Sorrel
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteMg(),
-                WriteCu(),
-                WriteP()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetMg(),
+                GetCu(),
+                GetP()
                 );
         }
-        protected double WriteMg()
+        protected double GetMg()
         {
             Console.WriteLine("Введите количество магния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCu()
+        protected double GetCu()
         {
             Console.WriteLine("Введите количество меди (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteP()
+        protected double GetP()
         {
             Console.WriteLine("Введите количество фосфора (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

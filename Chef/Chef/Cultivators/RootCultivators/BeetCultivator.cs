@@ -11,33 +11,33 @@ namespace Chef.Cultivators.RootCultivators
         {
             return new Beet
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteSi(),
-                WriteCr(),
-                WriteMn()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetSi(),
+                GetCr(),
+                GetMn()
                 );
         }
-        protected double WriteSi()
+        protected double GetSi()
         {
             Console.WriteLine("Введите количество кремния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCr()
+        protected double GetCr()
         {
             Console.WriteLine("Введите количество хрома (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMn()
+        protected double GetMn()
         {
             Console.WriteLine("Введите количество марганца (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

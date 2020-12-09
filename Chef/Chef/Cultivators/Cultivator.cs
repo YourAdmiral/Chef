@@ -7,8 +7,8 @@ namespace Chef.Cultivators
 {
     internal abstract class Cultivator
     {
-        private double Weight = -1;
-        protected string WriteSort()
+        private double _weight = -1;
+        protected string GetSort()
         {
             Console.WriteLine("---Укажите информацию об ингредиенте---");
             string sort;
@@ -16,36 +16,36 @@ namespace Chef.Cultivators
             sort = Console.ReadLine();
             return sort;
         }
-        protected string WriteColor()
+        protected string GetColor()
         {
             string color;
             Console.WriteLine("Введите цвет: ");
             color = Console.ReadLine();
             return color;
         }
-        protected double WriteWeight()
+        protected double GetWeight()
         {
             Console.WriteLine("Введите вес (г): ");
-            Weight = WriteDouble();
-            return Weight;
+            _weight = GetDouble();
+            return _weight;
 
         }
-        protected double WriteProteins()
+        protected double GetProteins()
         {
             Console.WriteLine("Введите количество протеина (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteFats()
+        protected double GetFats()
         {
             Console.WriteLine("Введите количество жиров (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCarbohydrates()
+        protected double GetCarbohydrates()
         {
             Console.WriteLine("Введите количество углеводов (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteCalories()
+        protected double GetCalories()
         {
             Console.WriteLine("Введите количество калорий (ккал): ");
             double num = 0;
@@ -69,12 +69,12 @@ namespace Chef.Cultivators
             }
             return num;
         }
-        protected double WriteWater()
+        protected double GetWater()
         {
             Console.WriteLine("Введите количество воды (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteDouble()
+        protected double GetDouble()
         {
             double num = 0;
             while (num == 0)
@@ -103,7 +103,7 @@ namespace Chef.Cultivators
         }
         protected bool CompareWithWeight(double num)
         {
-            if (num >= Weight && Weight != -1)
+            if (num >= _weight && _weight != -1)
                 return true;
             return false;
         }

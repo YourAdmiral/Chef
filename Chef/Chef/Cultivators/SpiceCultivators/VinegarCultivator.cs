@@ -11,33 +11,33 @@ namespace Chef.Cultivators.SpiceCultivators
         {
             return new Vinegar
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteCa(),
-                WriteMg(),
-                WriteNa()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetCa(),
+                GetMg(),
+                GetNa()
                 );
         }
-        protected double WriteCa()
+        protected double GetCa()
         {
             Console.WriteLine("Введите количество кальция (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteMg()
+        protected double GetMg()
         {
             Console.WriteLine("Введите количество магния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteNa()
+        protected double GetNa()
         {
             Console.WriteLine("Введите количество натрия (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }

@@ -11,33 +11,33 @@ namespace Chef.Cultivators.OnionCultivators
         {
             return new LeekOnion
                 (
-                WriteSort(),
-                WriteColor(),
-                WriteWeight(),
-                WriteProteins(),
-                WriteFats(),
-                WriteCarbohydrates(),
-                WriteCalories(),
-                WriteWater(),
-                WriteCo(),
-                WriteSi(),
-                WriteZn()
+                GetSort(),
+                GetColor(),
+                GetWeight(),
+                GetProteins(),
+                GetFats(),
+                GetCarbohydrates(),
+                GetCalories(),
+                GetWater(),
+                GetCo(),
+                GetSi(),
+                GetZn()
                 );
         }
-        protected double WriteCo()
+        protected double GetCo()
         {
             Console.WriteLine("Введите количество оксида углерода (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteSi()
+        protected double GetSi()
         {
             Console.WriteLine("Введите количество кремния (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
-        protected double WriteZn()
+        protected double GetZn()
         {
             Console.WriteLine("Введите количество цинка (г): ");
-            return WriteDouble();
+            return GetDouble();
         }
     }
 }
