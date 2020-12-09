@@ -102,6 +102,8 @@ namespace Chef.Manager
                     {
                         choose2 = Console.ReadLine();
                         num2 = Convert.ToDouble(choose2);
+                        if (num2 < num1)
+                            throw new Exception();
                     }
                     catch (Exception)
                     {
@@ -109,11 +111,11 @@ namespace Chef.Manager
                         Console.WriteLine("Введено неккоректное значение!");
                     }
                 }
-                var selectedVegetables = composition.Where(v => (v.Calories >= num1) && (v.Calories <= num2)).OrderBy(v => v);
+                var selectedVegetables = composition.Where(v => (v.Calories >= num1) && (v.Calories <= num2));
                 if (selectedVegetables.Count() != 0)
                 {
                     Console.WriteLine($"Ингридиенты соответствующие заданному диапазону калорийности ({num1} - {num2}): ");
-                    foreach (var item in selectedVegetables)
+                    foreach (Vegetable item in selectedVegetables)
                     {
                         Console.WriteLine($"{item.GetName()} \"{item.Sort}\" {item.Calories} ккал.");
                     }
