@@ -81,42 +81,31 @@ namespace Chef.Vegetables
         }
         public virtual void GetInformation()
         {
-            Console.WriteLine("---Информация про " + GetName() + "---");
-            Console.WriteLine("Общая информация:\n" +
-                "Сорт - " + Sort + ".\n" +
-                "Цвет - " + Color + ".\n" +
-                "Вес - " + Weight + " г.");
-            Console.WriteLine("Пищевая ценность:\n" +
-                "Калорийность - " + Calories + " ккал.\n" +
-                "Белки - " + Proteins + " г.\n" +
-                "Жиры - " + Fats + " г.\n" +
-                "Углеводы - " + Carbohydrates + " г.\n" +
-                "Вода - " + Water + " г.");
+            Console.WriteLine($"---Информация про {GetName()}---\n" +
+                $"Общая информация:\n" +
+                $"Сорт - {Sort}.\n" +
+                $"Цвет - {Color}.\n" +
+                $"Вес - {Weight} г.\n" +
+                $"Пищевая ценность:\n" +
+                $"Калорийность - {Calories} ккал.\n" +
+                $"Белки - {Proteins} г.\n" +
+                $"Жиры - {Fats} г.\n" +
+                $"Углеводы - {Carbohydrates} г.\n" +
+                $"Вода - {Water} г.");
         }
         public virtual void Handle()
         {
-            Console.WriteLine("---Подготавливаем " + GetName() + "---");
-            Console.WriteLine("Очистили от пыли и грязи...");
+            Console.WriteLine($"---Подготавливаем {GetName()}---\n" +
+                $"Очистили от пыли и грязи...");
         }
         protected bool CheckDouble(double value)
         {
             try
             {
-                if (value.GetType() == typeof(double))
-                {
-                    if (value > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        throw new Exception("Значение не может быть меньше нуля.");
-                    }
-                }
-                else
-                {
-                    throw new Exception("Было введено некорректное значение.");
-                }
+                if (value.GetType() == typeof(double) && value > 0)
+                    return true;
+                throw new Exception("Было введено некорректное значение.");
+
             }
             catch (Exception ex)
             {
@@ -129,13 +118,8 @@ namespace Chef.Vegetables
             try
             {
                 if (value < Weight)
-                {
                     return true;
-                }
-                else
-                {
-                    throw new Exception("Значение превышает общий вес.");
-                }
+                throw new Exception("Значение превышает общий вес.");
             }
             catch (Exception ex)
             {

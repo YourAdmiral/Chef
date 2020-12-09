@@ -28,7 +28,7 @@ namespace Chef.Cultivators
             Console.WriteLine("Введите вес (г): ");
             Weight = WriteDouble();
             return Weight;
-              
+
         }
         protected double WriteProteins()
         {
@@ -103,15 +103,9 @@ namespace Chef.Cultivators
         }
         protected bool CompareWithWeight(double num)
         {
-            if (num >= Weight)
-            {
-                if (Weight!=-1)
-                    return true;
-                else
-                    return false;
-            }
-            else
-                return false;
+            if (num >= Weight && Weight != -1)
+                return true;
+            return false;
         }
     }
 }
