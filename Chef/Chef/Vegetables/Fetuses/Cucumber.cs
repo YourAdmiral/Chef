@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Fetuses
 {
-    class Cucumber : Fetus
+    internal class Cucumber : Fetus
     {
-        double k;
+        private double k;
+        private double si;
+        private double cr;
         public double K 
         {
             get { return k; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Fetuses
                     k = value;
             }
         }
-        double si;
         public double Si 
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Fetuses
                     si = value;
             }
         }
-        double cr;
         public double Cr 
         {
             get { return cr; }
@@ -46,10 +46,10 @@ namespace Chef.Vegetables.Fetuses
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Калий - " + K + " г.\n" +
-                "Кремний - " + Si + " г.\n" +
-                "Хром - " + Cr + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Калий - {K} г.\n" +
+                $"Кремний - {Si} г.\n" +
+                $"Хром - {Cr} г.");
         }
         public override void Handle()
         {
@@ -57,7 +57,7 @@ namespace Chef.Vegetables.Fetuses
             base.Handle();
             Console.WriteLine("Нарезали огурец...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Огурец";
         }

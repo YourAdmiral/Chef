@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Spices;
 
 namespace Chef.Cultivators.SpiceCultivators
 {
-    abstract class SpiceCultivator : Cultivator
+    internal abstract class SpiceCultivator : Cultivator
     {
-        public abstract Vegetables.Spices.Spice CultivateSpice();
+        public abstract Spice CultivateSpice();
     }
 }

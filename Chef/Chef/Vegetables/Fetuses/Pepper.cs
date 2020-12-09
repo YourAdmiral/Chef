@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Fetuses
 {
-    class Pepper : Fetus
+    internal class Pepper : Fetus
     {
-        double c;
+        private double c;
+        private double si;
+        private double cu;
         public double C 
         {
             get { return c; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Fetuses
                     c = value;
             }
         }
-        double si;
         public double Si 
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Fetuses
                     si = value;
             }
         }
-        double cu;
         public double Cu 
         {
             get { return cu; }
@@ -46,17 +46,17 @@ namespace Chef.Vegetables.Fetuses
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Углерод - " + C + " г.\n" +
-                "Кремний - " + Si + " г.\n" +
-                "Медь - " + Cu + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Углерод - {C} г.\n" +
+                $"Кремний - {Si} г.\n" +
+                $"Медь - {Cu} г.");
         }
         public override void Handle()
         {
             base.Handle();
             Console.WriteLine("Нарезали перец...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Перец";
         }

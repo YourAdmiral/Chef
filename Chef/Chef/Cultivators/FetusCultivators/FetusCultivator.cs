@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Fetuses;
 
 namespace Chef.Cultivators.FetusCultivators
 {
-    abstract class FetusCultivator : Cultivator
+    internal abstract class FetusCultivator : Cultivator
     {
-        public abstract Vegetables.Fetuses.Fetus CultivateFetus();
+        public abstract Fetus CultivateFetus();
     }
 }

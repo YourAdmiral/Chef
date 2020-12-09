@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Fetuses
 {
-    class Tomato : Fetus
+    internal class Tomato : Fetus
     {
-        double co;
+        private double co;
+        private double si;
+        private double c;
         public double Co 
         {
             get { return co; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Fetuses
                     co = value;
             }
         }
-        double si;
         public double Si 
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Fetuses
                     si = value;
             }
         }
-        double c;
         public double C 
         {
             get { return c; }
@@ -46,17 +46,17 @@ namespace Chef.Vegetables.Fetuses
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Оксид углерода - " + Co + " г.\n" +
-                "Кремний - " + Si + " г.\n" +
-                "Углерод - " + C + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Оксид углерода - {Co} г.\n" +
+                $"Кремний - {Si} г.\n" +
+                $"Углерод - {C} г.");
         }
         public override void Handle()
         {
             base.Handle();
             Console.WriteLine("Нарезали томат...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Томат";
         }

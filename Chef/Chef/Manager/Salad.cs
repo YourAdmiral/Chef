@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Chef.Vegetables;
 
 namespace Chef.Manager
 {
-    class Salad
+    internal class Salad
     {
         public string Name { get; set; }
-        List<Vegetables.Vegetable> composition = new List<Vegetables.Vegetable>();
+        private List<Vegetable> composition = new List<Vegetable>();
         public Salad(string name)
         {
             Name = name;
         }
-        public Salad(string name, List<Vegetables.Vegetable> composition)
+        public Salad(string name, List<Vegetable> composition)
         {
             Name = name;
             AddVegetables(composition);
         }
-        public void AddVegetable(Vegetables.Vegetable vegetable)
+        public void AddVegetable(Vegetable vegetable)
         {
             composition.Add(vegetable);
             vegetable.Handle();
         }
-        public void AddVegetables(List<Vegetables.Vegetable> vegetables)
+        public void AddVegetables(List<Vegetable> vegetables)
         {
-            composition.AddRange(vegetables);
-            foreach (var item in vegetables)
-                item.Handle();
+            foreach (var vegetable in vegetables)
+                AddVegetable(vegetable);
         }
         public void CountCalories()
         {
@@ -36,7 +36,7 @@ namespace Chef.Manager
             {
                 calories += item.Calories;
             }
-            Console.WriteLine("В данном салате содержится " + calories + " ккал калорий.");
+            Console.WriteLine($"В данном салате содержится {calories} ккал калорий.");
         }
         public void SortByProteins()
         {
@@ -60,12 +60,12 @@ namespace Chef.Manager
         }
         public void ShowComposition()
         {
-            Console.WriteLine("Состав салата \"" + Name + "\" включает в себя: ");
+            Console.WriteLine($"Состав салата \"{Name}\" включает в себя: ");
             if (composition.Count != 0)
             {
                 foreach (var item in composition)
                 {
-                    Console.WriteLine(item.GetVegetableName() + " \"" + item.Sort + "\" " + item.Weight + " г.");
+                    Console.WriteLine($"{item.GetName()} \"{item.Sort}\" {item.Weight} г.");
                 }
             }
             else
@@ -102,6 +102,8 @@ namespace Chef.Manager
                     {
                         choose2 = Console.ReadLine();
                         num2 = Convert.ToDouble(choose2);
+                        if (num2 < num1)
+                            throw new Exception();
                     }
                     catch (Exception)
                     {
@@ -109,13 +111,13 @@ namespace Chef.Manager
                         Console.WriteLine("Введено неккоректное значение!");
                     }
                 }
-                var selectedVegetables = composition.Where(v => (v.Calories >= num1) && (v.Calories <= num2)).OrderBy(v => v);
+                var selectedVegetables = composition.Where(v => (v.Calories >= num1) && (v.Calories <= num2));
                 if (selectedVegetables.Count() != 0)
                 {
-                    Console.WriteLine("Ингридиенты соответствующие заданному диапазону калорийности (" + num1 + " - " + num2 + "): ");
-                    foreach (var item in selectedVegetables)
+                    Console.WriteLine($"Ингридиенты соответствующие заданному диапазону калорийности ({num1} - {num2}): ");
+                    foreach (Vegetable item in selectedVegetables)
                     {
-                        Console.WriteLine(item.GetVegetableName() + " \"" + item.Sort + "\" " + item.Calories + " ккал.");
+                        Console.WriteLine($"{item.GetName()} \"{item.Sort}\" {item.Calories} ккал.");
                     }
                 }
                 else

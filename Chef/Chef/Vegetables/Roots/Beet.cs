@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Roots
 {
-    class Beet : Root
+    internal class Beet : Root
     {
-        double si;
+        private double si;
+        private double cr;
+        private double mn;
         public double Si 
         {
             get { return si; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Roots
                     si = value;
             }
         }
-        double cr;
         public double Cr 
         {
             get { return cr; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Roots
                     cr = value;
             }
         }
-        double mn;
         public double Mn 
         {
             get { return mn; }
@@ -47,17 +47,16 @@ namespace Chef.Vegetables.Roots
         {
             base.GetInformation();
             Console.WriteLine("Минералы и витамины:\n" +
-                "Кремний - " + Si + " г.\n" +
-                "Хром - " + Cr + " г.\n" +
-                "Марганец - " + Mn + " г.");
+                $"Кремний - {Si} г.\n" +
+                $"Хром - {Cr} г.\n" +
+                $"Марганец - {Mn} г.");
         }
         public override void Handle()
         {
             base.Handle();
             Console.WriteLine("Нарезали свеклу...");
         }
-
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Свекла";
         }

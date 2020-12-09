@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Leafs;
 
 namespace Chef.Cultivators.LeafCultivators
 {
-    class WhiteCabbageCultivator : LeafCultivator
+    internal class WhiteCabbageCultivator : LeafCultivator
     {
-        public override Vegetables.Leafs.Leaf CultivateLeaf()
+        public override Leaf CultivateLeaf()
         {
-            return new Vegetables.Leafs.WhiteCabbage
+            return new WhiteCabbage
                 (
                 WriteSort(),
                 WriteColor(),

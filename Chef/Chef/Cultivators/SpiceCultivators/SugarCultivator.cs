@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Spices;
 
 namespace Chef.Cultivators.SpiceCultivators
 {
-    class SugarCultivator:SpiceCultivator
+    internal class SugarCultivator:SpiceCultivator
     {
-        public override Vegetables.Spices.Spice CultivateSpice()
+        public override Spice CultivateSpice()
         {
-            return new Vegetables.Spices.Sugar
+            return new Sugar
                 (
                 WriteSort(),
                 WriteColor(),

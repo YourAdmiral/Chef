@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Leafs;
 
 namespace Chef.Cultivators.LeafCultivators
 {
-    abstract class LeafCultivator : Cultivator
+    internal abstract class LeafCultivator : Cultivator
     {
-        public abstract Vegetables.Leafs.Leaf CultivateLeaf();
+        public abstract Leaf CultivateLeaf();
     }
 }

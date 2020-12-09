@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Fetuses;
 
 namespace Chef.Cultivators.FetusCultivators
 {
-    class CucumberCultivator : FetusCultivator
+    internal class CucumberCultivator : FetusCultivator
     {
-        public override Vegetables.Fetuses.Fetus CultivateFetus()
+        public override Fetus CultivateFetus()
         {
-            return new Vegetables.Fetuses.Cucumber
+            return new Cucumber
                 (
                 WriteSort(),
                 WriteColor(),

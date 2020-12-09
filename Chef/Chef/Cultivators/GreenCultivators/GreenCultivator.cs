@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Greens;
 
 namespace Chef.Cultivators.GreenCultivators
 {
-    abstract class GreenCultivator : Cultivator
+    internal abstract class GreenCultivator : Cultivator
     {
-        public abstract Vegetables.Greens.Green CultivateGreen();
+        public abstract Green CultivateGreen();
     }
 }

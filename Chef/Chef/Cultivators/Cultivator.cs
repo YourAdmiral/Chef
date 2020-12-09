@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace Chef.Cultivators
 {
-    abstract class Cultivator
+    internal abstract class Cultivator
     {
-        double weight = -1;
+        private double Weight = -1;
         protected string WriteSort()
         {
             Console.WriteLine("---Укажите информацию об ингредиенте---");
@@ -26,9 +26,9 @@ namespace Chef.Cultivators
         protected double WriteWeight()
         {
             Console.WriteLine("Введите вес (г): ");
-            weight = WriteDouble();
-            return weight;
-              
+            Weight = WriteDouble();
+            return Weight;
+
         }
         protected double WriteProteins()
         {
@@ -103,15 +103,9 @@ namespace Chef.Cultivators
         }
         protected bool CompareWithWeight(double num)
         {
-            if (num >= weight)
-            {
-                if (weight!=-1)
-                    return true;
-                else
-                    return false;
-            }
-            else
-                return false;
+            if (num >= Weight && Weight != -1)
+                return true;
+            return false;
         }
     }
 }

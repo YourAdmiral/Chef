@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Leafs
 {
-    class WhiteCabbage : Leaf
+    internal class WhiteCabbage : Leaf
     {
-        double co;
+        private double co;
+        private double mo;
+        private double cr;
         public double Co 
         {
             get { return co; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Leafs
                     co = value;
             }
         }
-        double mo;
         public double Mo 
         {
             get { return mo; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Leafs
                     mo = value;
             }
         }
-        double cr;
         public double Cr 
         {
             get { return cr; }
@@ -46,17 +46,17 @@ namespace Chef.Vegetables.Leafs
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Оксид углерода - " + Co + " г.\n" +
-                "Молибден - " + Mo + " г.\n" +
-                "Хром - " + Cr + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Оксид углерода - {Co} г.\n" +
+                $"Молибден - {Mo} г.\n" +
+                $"Хром - {Cr} г.");
         }
         public override void Handle()
         {
             base.Handle();
             Console.WriteLine("Нашинковали капусту...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Белокочанная капуста";
         }

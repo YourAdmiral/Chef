@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Greens
 {
-    class Parsley : Green
+    internal class Parsley : Green
     {
-        double ca;
+        private double ca;
+        private double si;
+        private double mg;
         public double Ca
         {
             get { return ca; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Greens
                     ca = value;
             }
         }
-        double si;
         public double Si
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Greens
                     si = value;
             }
         }
-        double mg;
         public double Mg
         {
             get { return mg; }
@@ -46,17 +46,17 @@ namespace Chef.Vegetables.Greens
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Кальций - " + Ca + " г.\n" +
-                "Кремний - " + Si + " г.\n" +
-                "Магний - " + Mg + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Кальций - {Ca} г.\n" +
+                $"Кремний - {Si} г.\n" +
+                $"Магний - {Mg} г.");
         }
         public override void Handle()
         {
             base.Handle();
             Console.WriteLine("Нарезали петрушку...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Петрушка";
         }

@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Greens
 {
-    class Dill : Green
+    internal class Dill : Green
     {
-        double mn;
+        private double mn;
+        private double cr;
+        private double co;
         public double Mn
         {
             get { return mn; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Greens
                     mn = value;
             }
         }
-        double cr;
         public double Cr
         {
             get { return cr; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Greens
                     cr = value;
             }
         }
-        double co;
         public double Co
         {
             get { return co; }
@@ -46,17 +46,17 @@ namespace Chef.Vegetables.Greens
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Марганец - " + Mn + " г.\n" +
-                "Хром - " + Cr + " г.\n" +
-                "Оксид углерода - " + Co + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Марганец - {Mn} г.\n" +
+                $"Хром - {Cr} г.\n" +
+                $"Оксид углерода - {Co} г.");
         }
         public override void Handle()
         {
             base.Handle();
             Console.WriteLine("Нарезали укроп...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Укроп";
         }

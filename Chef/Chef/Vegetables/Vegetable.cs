@@ -4,21 +4,16 @@ using System.Text;
 
 namespace Chef.Vegetables
 {
-    abstract class Vegetable
+    internal abstract class Vegetable
     {
-        protected string sort;
-        public string Sort
-        {
-            get { return sort; }
-            set { sort = value; }
-        }
-        protected string color;
-        public string Color
-        {
-            get { return color; }
-            set { color = value; }
-        }
-        protected double weight;
+        private double weight;
+        private double proteins;
+        private double carbohydrates;
+        private double calories;
+        private double water;
+        private double fats;
+        public string Sort { get; set; }
+        public string Color { get; set; }
         public double Weight
         {
             get { return weight; }
@@ -28,7 +23,6 @@ namespace Chef.Vegetables
                     weight = value;
             }
         }
-        protected double proteins;
         public double Proteins
         {
             get { return proteins; }
@@ -38,7 +32,6 @@ namespace Chef.Vegetables
                     proteins = value;
             }
         }
-        protected double fats;
         public double Fats
         {
             get { return fats; }
@@ -48,7 +41,6 @@ namespace Chef.Vegetables
                     fats = value;
             }
         }
-        protected double carbohydrates;
         public double Carbohydrates
         {
             get { return carbohydrates; }
@@ -58,7 +50,6 @@ namespace Chef.Vegetables
                     carbohydrates = value;
             }
         }
-        protected double calories;
         public double Calories
         {
             get { return calories; }
@@ -68,7 +59,6 @@ namespace Chef.Vegetables
                     calories = value;
             }
         }
-        protected double water;
         public double Water
         {
             get { return water; }
@@ -78,10 +68,10 @@ namespace Chef.Vegetables
                     water = value;
             }
         }
-        public Vegetable(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water)
+        protected Vegetable(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water)
         {
-            this.sort = sort;
-            this.color = color;
+            Sort = sort;
+            Color = color;
             this.weight = weight;
             this.proteins = proteins;
             this.fats = fats;
@@ -91,69 +81,52 @@ namespace Chef.Vegetables
         }
         public virtual void GetInformation()
         {
-            Console.WriteLine("---Информация про " + GetVegetableName() + "---");
-            Console.WriteLine("Общая информация:\n" +
-                "Сорт - " + Sort + ".\n" +
-                "Цвет - " + Color + ".\n" +
-                "Вес - " + Weight + " г.");
-            Console.WriteLine("Пищевая ценность:\n" +
-                "Калорийность - " + Calories + " ккал.\n" +
-                "Белки - " + Proteins + " г.\n" +
-                "Жиры - " + Fats + " г.\n" +
-                "Углеводы - " + Carbohydrates + " г.\n" +
-                "Вода - " + Water + " г.");
+            Console.WriteLine($"---Информация про {GetName()}---\n" +
+                $"Общая информация:\n" +
+                $"Сорт - {Sort}.\n" +
+                $"Цвет - {Color}.\n" +
+                $"Вес - {Weight} г.\n" +
+                $"Пищевая ценность:\n" +
+                $"Калорийность - {Calories} ккал.\n" +
+                $"Белки - {Proteins} г.\n" +
+                $"Жиры - {Fats} г.\n" +
+                $"Углеводы - {Carbohydrates} г.\n" +
+                $"Вода - {Water} г.");
         }
         public virtual void Handle()
         {
-            Console.WriteLine("---Подготавливаем " + GetVegetableName() + "---");
-            Console.WriteLine("Очистили от пыли и грязи...");
+            Console.WriteLine($"---Подготавливаем {GetName()}---\n" +
+                $"Очистили от пыли и грязи...");
         }
         protected bool CheckDouble(double value)
         {
             try
             {
-                if (value.GetType() == typeof(double))
-                {
-                    if (value > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        throw new Exception("Значение не может быть меньше нуля.");
-                    }
-                }
-                else
-                {
-                    throw new Exception("Было введено некорректное значение.");
-                }
+                if (value.GetType() == typeof(double) && value > 0)
+                    return true;
+                throw new Exception("Было введено некорректное значение.");
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ошибка: " + ex.Message);
+                Console.WriteLine($"Ошибка: {ex.Message}");
                 return false;
             }
         }
-
         protected bool CheckWeight(double value)
         {
             try
             {
                 if (value < Weight)
-                {
                     return true;
-                }
-                else
-                {
-                    throw new Exception("Значение превышает общий вес.");
-                }
+                throw new Exception("Значение превышает общий вес.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ошибка: " + ex.Message);
+                Console.WriteLine($"Ошибка: {ex.Message}");
                 return false;
             }
         }
-        abstract public string GetVegetableName();
+        public abstract string GetName();
     }
 }

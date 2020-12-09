@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Chef.Vegetables.Onions
 {
-    class LeekOnion : Onion
+    internal class LeekOnion : Onion
     {
-        double co;
+        private double co;
+        private double si;
+        private double zn;
         public double Co
         {
             get { return co; }
@@ -16,7 +18,6 @@ namespace Chef.Vegetables.Onions
                     co = value;
             }
         }
-        double si;
         public double Si
         {
             get { return si; }
@@ -26,7 +27,6 @@ namespace Chef.Vegetables.Onions
                     si = value;
             }
         }
-        double zn;
         public double Zn
         {
             get { return zn; }
@@ -46,17 +46,17 @@ namespace Chef.Vegetables.Onions
         public override void GetInformation()
         {
             base.GetInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                "Оксид углерода - " + Co + " г.\n" +
-                "Кремний - " + Si + " г.\n" +
-                "Цинк - " + Zn + " г.");
+            Console.WriteLine($"Минералы и витамины:\n" +
+                $"Оксид углерода - {Co} г.\n" +
+                $"Кремний - {Si} г.\n" +
+                $"Цинк - {Zn} г.");
         }
         public override void Handle()
         {
             base.Handle();
             Console.WriteLine("Нарезали лук-порей...");
         }
-        public override string GetVegetableName()
+        public override string GetName()
         {
             return "Лук-порей";
         }

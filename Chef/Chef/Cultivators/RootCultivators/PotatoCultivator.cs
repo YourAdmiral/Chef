@@ -1,11 +1,11 @@
-﻿using Chef.Vegetables.Roots;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Chef.Vegetables.Roots;
 
 namespace Chef.Cultivators.RootCultivators
 {
-    class PotatoCultivator : RootCultivator
+    internal class PotatoCultivator : RootCultivator
     {
         public override Root CultivateRoot()
         {

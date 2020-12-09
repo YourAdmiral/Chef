@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chef.Vegetables.Fetuses
 {
-    abstract class Fetus : Vegetable
+    internal abstract class Fetus : Vegetable
     {
         public Fetus(string sort, string color, double weight, double proteins, double fats, double carbohydrates, double calories, double water)
             : base(sort, color, weight, proteins, fats, carbohydrates, calories, water)
@@ -16,7 +16,6 @@ namespace Chef.Vegetables.Fetuses
             base.Handle();
             Console.WriteLine("Извлекли семечки...");
         }
-
         public override void GetInformation()
         {
             base.GetInformation();
