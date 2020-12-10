@@ -14,12 +14,12 @@ namespace Chef.Vegetables
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Тип ингредиента:\nОвощ");
+            Console.WriteLine($"Ingredient type:\nVegetable");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine($"Очистили от пыли и грязи...");
+            Console.WriteLine($"Remove dust and dirt...");
         }
     }
 }

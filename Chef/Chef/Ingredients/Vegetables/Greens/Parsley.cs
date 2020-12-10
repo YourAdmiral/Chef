@@ -46,19 +46,19 @@ namespace Chef.Vegetables.Greens
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Кальций - {Ca} г.\n" +
-                $"Кремний - {Si} г.\n" +
-                $"Магний - {Mg} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Calcium - {Ca} г.\n" +
+                $"Silicon - {Si} г.\n" +
+                $"Magnesium - {Mg} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нарезали петрушку...");
+            Console.WriteLine("Chopped parsley...");
         }
         public override string GetName()
         {
-            return "Петрушка";
+            return "Parsley";
         }
     }
 }

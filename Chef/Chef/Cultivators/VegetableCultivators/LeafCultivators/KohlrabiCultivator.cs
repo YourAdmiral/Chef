@@ -26,17 +26,17 @@ namespace Chef.Cultivators.LeafCultivators
         }
         protected double GetCa()
         {
-            Console.WriteLine("Введите количество кальция (г): ");
+            Console.WriteLine("Enter the amount of calcium (g): ");
             return GetDouble();
         }
         protected double GetMg()
         {
-            Console.WriteLine("Введите количество магния (г): ");
+            Console.WriteLine("Enter the amount of magnesium (g): ");
             return GetDouble();
         }
         protected double GetP()
         {
-            Console.WriteLine("Введите количество фосфора (г): ");
+            Console.WriteLine("Enter the amount of phosphorus (g): ");
             return GetDouble();
         }
     }

@@ -14,12 +14,12 @@ namespace Chef.Vegetables.Onions
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Очистили луковицу от чешуек...");
+            Console.WriteLine("Peeled the onion from scales...");
         }
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine("Классификация:\nЛуковое.");
+            Console.WriteLine("Classification:\nOnion.");
         }
     }
 }

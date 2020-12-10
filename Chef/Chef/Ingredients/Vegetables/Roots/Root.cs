@@ -14,12 +14,12 @@ namespace Chef.Vegetables.Roots
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Очистили от кожуры...");
+            Console.WriteLine("Peel skin...");
         }
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine("Классификация:\nКорнеплод.");
+            Console.WriteLine("Classification:\nRoot.");
         }
     }
 }

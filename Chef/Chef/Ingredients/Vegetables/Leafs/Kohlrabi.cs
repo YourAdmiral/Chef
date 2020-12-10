@@ -49,19 +49,19 @@ namespace Chef.Vegetables.Leafs
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Кальций - {Ca} г.\n" +
-                $"Магний - {Mg} г.\n" +
-                $"Фосфор - {P} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Calcium - {Ca} г.\n" +
+                $"Magnesium - {Mg} г.\n" +
+                $"Phosphorus - {P} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нашинковали кольраби...");
+            Console.WriteLine("Chopped kohlrabi...");
         }
         public override string GetName()
         {
-            return "Кольраби";
+            return "Kohlrabi";
         }
     }
 }

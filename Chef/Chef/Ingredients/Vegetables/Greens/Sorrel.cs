@@ -46,19 +46,19 @@ namespace Chef.Vegetables.Greens
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Магний - {Mg} г.\n" +
-                $"Медь - {Cu} г.\n" +
-                $"Фосфор - {P} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Magnesium - {Mg} г.\n" +
+                $"Copper - {Cu} г.\n" +
+                $"Phosphorus - {P} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нарезали щавель...");
+            Console.WriteLine("Chopped sorrel...");
         }
         public override string GetName()
         {
-            return "Щавель";
+            return "Sorrel";
         }
     }
 }

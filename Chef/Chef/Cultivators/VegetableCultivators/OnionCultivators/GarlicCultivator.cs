@@ -26,17 +26,17 @@ namespace Chef.Cultivators.OnionCultivators
         }
         protected double GetCo()
         {
-            Console.WriteLine("Введите количество оксида углерода (г): ");
+            Console.WriteLine("Enter the amount of carbon monoxide (g): ");
             return GetDouble();
         }
         protected double GetCr()
         {
-            Console.WriteLine("Введите количество хрома (г): ");
+            Console.WriteLine("Enter the amount of chromium (g): ");
             return GetDouble();
         }
         protected double GetMn()
         {
-            Console.WriteLine("Введите количество марганца (г): ");
+            Console.WriteLine("Enter the amount of manganese (g): ");
             return GetDouble();
         }
     }

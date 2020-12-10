@@ -36,31 +36,31 @@ namespace Chef.Manager
             {
                 calories += item.Calories;
             }
-            Console.WriteLine($"В данном салате содержится {calories} ккал калорий.");
+            Console.WriteLine($"This salad contains {calories} kcal calories.");
         }
         public void SortByProteins()
         {
             _composition = _composition.OrderBy(u => u.Proteins).ToList();
-            Console.WriteLine("Состав салата был отсортирован на основе белка!");
+            Console.WriteLine("The salad was sorted based on protein!");
         }
         public void SortByFats()
         {
             _composition = _composition.OrderBy(u => u.Fats).ToList();
-            Console.WriteLine("Состав салата был отсортирован на основе жиров!");
+            Console.WriteLine("The composition of the salad was sorted based on fat!");
         }
         public void SortByCarbohydrates()
         {
             _composition = _composition.OrderBy(u => u.Carbohydrates).ToList();
-            Console.WriteLine("Состав салата был отсортирован на основе углеводов!");
+            Console.WriteLine("The salad was sorted based on carbohydrates!");
         }
         public void SortByCalories()
         {
             _composition = _composition.OrderBy(u => u.Calories).ToList();
-            Console.WriteLine("Состав салата был отсортирован на основе калорий!");
+            Console.WriteLine("The salad was sorted based on calories!");
         }
         public void ShowComposition()
         {
-            Console.WriteLine($"Состав салата \"{Name}\" включает в себя: ");
+            Console.WriteLine($"Composition of \"{Name}\" includes: ");
             if (_composition.Count != 0)
             {
                 foreach (var item in _composition)
@@ -70,7 +70,7 @@ namespace Chef.Manager
             }
             else
             {
-                Console.WriteLine("Пусто");
+                Console.WriteLine("Empty");
             }
         }
         public void FindCalories()
@@ -81,7 +81,7 @@ namespace Chef.Manager
                 string choose2 = null;
                 double num1 = 0;
                 double num2 = 0;
-                Console.WriteLine("Введите минимальное число калорий: ");
+                Console.WriteLine("Enter the minimum of calories: ");
                 while (choose1 == null)
                 {
                     try
@@ -92,10 +92,10 @@ namespace Chef.Manager
                     catch (Exception)
                     {
                         choose1 = null;
-                        Console.WriteLine("Введено неккоректное значение!");
+                        Console.WriteLine("Incorrect value entered!");
                     }
                 }
-                Console.WriteLine("Введите максимальное число калорий: ");
+                Console.WriteLine("Enter the maximum of calories: ");
                 while (choose2 == null)
                 {
                     try
@@ -108,26 +108,26 @@ namespace Chef.Manager
                     catch (Exception)
                     {
                         choose2 = null;
-                        Console.WriteLine("Введено неккоректное значение!");
+                        Console.WriteLine("Incorrect value entered!");
                     }
                 }
                 var selectedVegetables = _composition.Where(v => (v.Calories >= num1) && (v.Calories <= num2));
                 if (selectedVegetables.Count() != 0)
                 {
-                    Console.WriteLine($"Ингредиенты соответствующие заданному диапазону калорийности ({num1} - {num2}): ");
+                    Console.WriteLine($"Ingredients within the calories range ({num1} - {num2}): ");
                     foreach (Ingredient item in selectedVegetables)
                     {
-                        Console.WriteLine($"{item.GetName()} \"{item.Sort}\" {item.Calories} ккал.");
+                        Console.WriteLine($"{item.GetName()} \"{item.Sort}\" {item.Calories} kcal.");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Совпадений не найдено!");
+                    Console.WriteLine("Not found!");
                 }
             }
             else
             {
-                Console.WriteLine("В салате отсутствуют ингредиенты!");
+                Console.WriteLine("The salad is missing ingredients!");
             }
         }
     }

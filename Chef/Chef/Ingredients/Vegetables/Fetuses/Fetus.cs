@@ -14,12 +14,12 @@ namespace Chef.Vegetables.Fetuses
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Извлекли семечки...");
+            Console.WriteLine("Extracted the seeds...");
         }
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine("Классификация:\nПлод.");
+            Console.WriteLine("Classification:\nFetus.");
         }
     }
 }

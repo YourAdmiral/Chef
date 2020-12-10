@@ -49,19 +49,19 @@ namespace Chef.Vegetables.Spices
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Кальций - {Ca} г.\n" +
-                $"Натрий - {Na} г.\n" +
-                $"Железо - {Fe} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Calcium - {Ca} г.\n" +
+                $"Sodium - {Na} г.\n" +
+                $"Iron - {Fe} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Насыпали сахара...");
+            Console.WriteLine("Poured sugar...");
         }
         public override string GetName()
         {
-            return "Сахар";
+            return "Sugar";
         }
     }
 }

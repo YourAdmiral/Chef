@@ -14,12 +14,12 @@ namespace Chef.Vegetables.Spices
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Использовали машину для обработки специй...");
+            Console.WriteLine("Used a spice processing machine...");
         }
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine("Тип ингредиента:\nСпеция.");
+            Console.WriteLine("Ingredient type:\nSpice.");
         }
     }
 }

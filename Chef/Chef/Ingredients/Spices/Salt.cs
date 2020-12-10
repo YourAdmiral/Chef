@@ -49,19 +49,19 @@ namespace Chef.Vegetables.Spices
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины: \n" +
-                $"Натрий - {Na} г.\n" +
-                $"Хлор - {Cl} г.\n" +
-                $"Марганец - {Mo} г.");
+            Console.WriteLine($"Minerals and vitamins: \n" +
+                $"Sodium - {Na} г.\n" +
+                $"Chlorine - {Cl} г.\n" +
+                $"Manganese - {Mo} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Насыпали соли...");
+            Console.WriteLine("Poured salt...");
         }
         public override string GetName()
         {
-            return "Соль";
+            return "Salt";
         }
     }
 }

@@ -14,12 +14,12 @@ namespace Chef.Vegetables.Leafs
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нарезали листья...");
+            Console.WriteLine("Cut the leaves...");
         }
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine("Классификация:\nЛистовое.");
+            Console.WriteLine("Classification:\nLeaf.");
         }
     }
 }

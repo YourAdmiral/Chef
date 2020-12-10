@@ -48,14 +48,14 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите действие:");
+                Console.WriteLine("Choose one of the actions:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Добавить ингредиенты на склад\n" +
-                "2 - Приготовить салат\n" +
-                "3 - Проверить склад ингредиентов\n" +
-                "4 - Проверить список салатов\n" +
-                "0 - Выйти");
+                "1 - Add ingredients to storage\n" +
+                "2 - Prepare salad\n" +
+                "3 - Check ingredients storage\n" +
+                "4 - Check list of salads\n" +
+                "0 - Exit");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -76,7 +76,7 @@ namespace Chef
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -86,12 +86,12 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите тип ингредиента:");
+                Console.WriteLine("Select the type of ingredient:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Овощ\n" +
-                "2 - Специя\n" +
-                "0 - Вернуться");
+                "1 - Vegetable\n" +
+                "2 - Spice\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -105,7 +105,7 @@ namespace Chef
                     case ConsoleKey.D0:
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -115,15 +115,15 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите тип овоща:");
+                Console.WriteLine("Select the type of vegetable:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Корнеплод\n" +
-                "2 - Плод\n" +
-                "3 - Зелень\n" +
-                "4 - Лук\n" +
-                "5 - Листовое\n" +
-                "0 - Вернуться");
+                "1 - Root\n" +
+                "2 - Fetus\n" +
+                "3 - Green\n" +
+                "4 - Onion\n" +
+                "5 - Leaf\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -146,7 +146,7 @@ namespace Chef
                     case ConsoleKey.D0:
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -155,24 +155,24 @@ namespace Chef
         {
             if (_ingredients.Count != 0)
             {
-                Console.WriteLine("Выберите название для салата: ");
+                Console.WriteLine("Choose a name for the salad:");
                 string name = Console.ReadLine();
                 List<Ingredient> composition = new List<Ingredient>();
                 string choose = null;
                 int num;
                 while (choose != "0")
                 {
-                    Console.WriteLine("Выберите что добавить в салат:");
+                    Console.WriteLine("Choose what to add to the salad:");
                     for (int i = 0; i < _ingredients.Count; i++)
                         Console.WriteLine(i + 1 + " - " + _ingredients[i].GetName() + " \"" + _ingredients[i].Sort + "\"");
-                    Console.WriteLine("0 - Приготовить");
+                    Console.WriteLine("0 - Cook");
                     try
                     {
                         choose = Console.ReadLine();
                         num = Convert.ToInt32(choose) - 1;
                         if (choose != "0")
                         {
-                            Console.WriteLine($"В салат был добавлен: {_ingredients[num].GetName()} \"{_ingredients[num].Sort}\"");
+                            Console.WriteLine($"Added to the salad: {_ingredients[num].GetName()} \"{_ingredients[num].Sort}\"");
                             composition.Add(_ingredients[num]);
                             _ingredients.RemoveAt(num);
                         }
@@ -181,25 +181,25 @@ namespace Chef
                             if (composition.Count != 0)
                             {
                                 _salads.Add(new Salad(name, composition));
-                                Console.WriteLine($"Салат \"{name}\" готов!");
+                                Console.WriteLine($"Salad \"{name}\" ready!");
                                 break;
                             }
                             else
                             {
-                                Console.WriteLine("Для начала добавьте что-нибудь в салат!");
+                                Console.WriteLine("Add something to your salad first!");
                                 choose = null;
                             }
                         }
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Введено неккоректное значение!");
+                        Console.WriteLine("Incorrect value entered!");
                     }
                 }
             }
             else
             {
-                Console.WriteLine("Требуются ингредиенты!");
+                Console.WriteLine("Ingredients required!");
             }
         }
         private static void CheckStorage()
@@ -208,10 +208,10 @@ namespace Chef
             {
                 string choose = null;
                 int num;
-                Console.WriteLine("Ингредиенты имеющиеся на складе: ");
+                Console.WriteLine("Storage ingredients:");
                 for (int i = 0; i < _ingredients.Count; i++)
                     Console.WriteLine($"{i + 1} - {_ingredients[i].GetName()} \"{_ingredients[i].Sort}\" {_ingredients[i].Weight} г.");
-                Console.WriteLine("0 - Вернуться");
+                Console.WriteLine("0 - Return");
                 while (choose != "0")
                 {
                     try
@@ -225,13 +225,13 @@ namespace Chef
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Введено неккоректное значение!");
+                        Console.WriteLine("Incorrect value entered!");
                     }
                 }
             }
             else
             {
-                Console.WriteLine("Склад пуст!");
+                Console.WriteLine("Storage is empty!");
             }
         }
         private static void CheckSalads()
@@ -242,10 +242,10 @@ namespace Chef
                 int num;
                 while (choose != "0")
                 {
-                    Console.WriteLine("Салаты имеющиеся в меню: ");
+                    Console.WriteLine("Salads available on the menu:");
                     for (int i = 0; i < _salads.Count; i++)
                         Console.WriteLine($"{i + 1} - {_salads[i].Name}");
-                    Console.WriteLine("0 - Вернуться");
+                    Console.WriteLine("0 - Return");
                     try
                     {
                         choose = Console.ReadLine();
@@ -257,13 +257,13 @@ namespace Chef
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Введено неккоректное значение!");
+                        Console.WriteLine("Incorrect value entered!");
                     }
                 }
             }
             else
             {
-                Console.WriteLine("Салаты отсутствуют!");
+                Console.WriteLine("There are no salads!");
             }
         }
         private static void SaladAction(int num)
@@ -273,15 +273,15 @@ namespace Chef
             string choose = null;
             while (choose != "0")
             {
-                Console.WriteLine($"Выберите действие над салатом \"{_salads[num].Name}\":");
+                Console.WriteLine($"Choose an action on the salad \"{_salads[num].Name}\":");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Сортировать состав салата по калориям\n" +
-                "2 - Сортировать состав салата по жирам\n" +
-                "3 - Сортировать состав салата по углеводам\n" +
-                "4 - Сортировать состав салата по белкам\n" +
-                "5 - Найти ингредиенты в салате соответствующие заданному диапазону калорийности\n" +
-                "0 - Вернуться");
+                "1 - Sort composition of the salad by calories\n" +
+                "2 - Sort composition of the salad by fat\n" +
+                "3 - Sort composition of the salad by carbohydrates\n" +
+                "4 - Sort composition of the salad by proteins\n" +
+                "5 - Find ingredients in a salad that match a given calorie range\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadLine();
                 switch (choose)
@@ -304,7 +304,7 @@ namespace Chef
                     case "0":
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -314,13 +314,13 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите нужный корнеплод:");
+                Console.WriteLine("Select desired root vegetable:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Картофель\n" +
-                "2 - Морковь\n" +
-                "3 - Свекла\n" +
-                "0 - Вернуться");
+                "1 - Potato\n" +
+                "2 - Carrot\n" +
+                "3 - Beet\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -346,7 +346,7 @@ namespace Chef
                     case ConsoleKey.D0:
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -356,13 +356,13 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите нужный плод:");
+                Console.WriteLine("Select desired fetus vegetable:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Томат\n" +
-                "2 - Перец\n" +
-                "3 - Огурец\n" +
-                "0 - Вернуться");
+                "1 - Tomato\n" +
+                "2 - Pepper\n" +
+                "3 - Cucumber\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -388,7 +388,7 @@ namespace Chef
                     case ConsoleKey.D0:
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -398,13 +398,13 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите нужный лук:");
+                Console.WriteLine("Select desired onion vegetable:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Чеснок\n" +
-                "2 - Лук-порей\n" +
-                "3 - Лук репчатый\n" +
-                "0 - Вернуться");
+                "1 - Garlic\n" +
+                "2 - Leek onion\n" +
+                "3 - Napiform onion\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -430,7 +430,7 @@ namespace Chef
                     case ConsoleKey.D0:
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -440,13 +440,13 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите нужную зелень:");
+                Console.WriteLine("Select desired green vegetable:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Щавель\n" +
-                "2 - Петрушка\n" +
-                "3 - Укроп\n" +
-                "0 - Вернуться");
+                "1 - Sorrel\n" +
+                "2 - Parsley\n" +
+                "3 - Dill\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -472,7 +472,7 @@ namespace Chef
                     case ConsoleKey.D0:
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -482,13 +482,13 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите нужное листовое:");
+                Console.WriteLine("Select desired leaf vegetable:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Белокочанная капуста\n" +
-                "2 - Брокколи\n" +
-                "3 - Кольраби\n" +
-                "0 - Вернуться");
+                "1 - White cabbage\n" +
+                "2 - Broccoli\n" +
+                "3 - Kohlrabi\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -514,7 +514,7 @@ namespace Chef
                     case ConsoleKey.D0:
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }
@@ -524,13 +524,13 @@ namespace Chef
             ConsoleKey choose = default;
             while (choose != ConsoleKey.D0)
             {
-                Console.WriteLine("Выберите нужную специю:");
+                Console.WriteLine("Select desired spice:");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine(
-                "1 - Соль\n" +
-                "2 - Сахар\n" +
-                "3 - Уксус\n" +
-                "0 - Вернуться");
+                "1 - Salt\n" +
+                "2 - Sugar\n" +
+                "3 - Vinegar\n" +
+                "0 - Return");
                 Console.WriteLine("-----------------------------");
                 choose = Console.ReadKey(true).Key;
                 switch (choose)
@@ -550,7 +550,7 @@ namespace Chef
                     case ConsoleKey.D0:
                         break;
                     default:
-                        Console.WriteLine("Вы выбрали неподходящее значение!");
+                        Console.WriteLine("You have chosen the wrong value!");
                         break;
                 }
             }

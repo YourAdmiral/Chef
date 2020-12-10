@@ -26,17 +26,17 @@ namespace Chef.Cultivators.LeafCultivators
         }
         protected double GetFe()
         {
-            Console.WriteLine("Введите количество железа (г): ");
+            Console.WriteLine("Enter the amount of iron (g): ");
             return GetDouble();
         }
         protected double GetI()
         {
-            Console.WriteLine("Введите количество йода (г): ");
+            Console.WriteLine("Enter the amount of iodine (g): ");
             return GetDouble();
         }
         protected double GetMn()
         {
-            Console.WriteLine("Введите количество марганца (г): ");
+            Console.WriteLine("Enter the amount of manganese (g): ");
             return GetDouble();
         }
     }

@@ -26,17 +26,17 @@ namespace Chef.Cultivators.RootCultivators
         }
         protected double GetSi()
         {
-            Console.WriteLine("Введите количество кремния (г): ");
+            Console.WriteLine("Enter the amount of silicon (g): ");
             return GetDouble();
         }
         protected double GetCr()
         {
-            Console.WriteLine("Введите количество хрома (г): ");
+            Console.WriteLine("Enter the amount of chromium (g): ");
             return GetDouble();
         }
         protected double GetMn()
         {
-            Console.WriteLine("Введите количество марганца (г): ");
+            Console.WriteLine("Enter the amount of manganese (g): ");
             return GetDouble();
         }
     }

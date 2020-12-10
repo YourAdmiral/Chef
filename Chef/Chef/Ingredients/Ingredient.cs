@@ -81,21 +81,21 @@ namespace Chef.Ingredients
         }
         public virtual void ShowInformation()
         {
-            Console.WriteLine($"---Информация про {GetName()}---\n" +
-                $"Общая информация:\n" +
-                $"Сорт - {Sort}.\n" +
-                $"Цвет - {Color}.\n" +
-                $"Вес - {Weight} г.\n" +
-                $"Пищевая ценность:\n" +
-                $"Калорийность - {Calories} ккал.\n" +
-                $"Белки - {Proteins} г.\n" +
-                $"Жиры - {Fats} г.\n" +
-                $"Углеводы - {Carbohydrates} г.\n" +
-                $"Вода - {Water} г.");
+            Console.WriteLine($"---Information about {GetName()}---\n" +
+                $"General information:\n" +
+                $"Sort - {Sort}.\n" +
+                $"Color - {Color}.\n" +
+                $"Weight - {Weight} г.\n" +
+                $"The nutritional value:\n" +
+                $"Calories - {Calories} ккал.\n" +
+                $"Proteins - {Proteins} г.\n" +
+                $"Fats - {Fats} г.\n" +
+                $"Carbohydrates - {Carbohydrates} г.\n" +
+                $"Water - {Water} г.");
         }
         public virtual void Handle()
         {
-            Console.WriteLine($"---Подготавливаем {GetName()}---");
+            Console.WriteLine($"---Preparing {GetName()}---");
         }
         protected bool CheckDouble(double value)
         {
@@ -103,11 +103,11 @@ namespace Chef.Ingredients
             {
                 if (value.GetType() == typeof(double) && value > 0)
                     return true;
-                throw new Exception("Было введено некорректное значение.");
+                throw new Exception("Incorrect value was entered.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка: {ex.Message}");
+                Console.WriteLine($"Error: {ex.Message}");
                 return false;
             }
         }
@@ -117,11 +117,11 @@ namespace Chef.Ingredients
             {
                 if (value < Weight)
                     return true;
-                throw new Exception("Значение превышает общий вес.");
+                throw new Exception("The value exceeds the total weight.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка: {ex.Message}");
+                Console.WriteLine($"Error: {ex.Message}");
                 return false;
             }
         }

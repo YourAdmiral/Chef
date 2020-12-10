@@ -46,19 +46,19 @@ namespace Chef.Vegetables.Fetuses
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Углерод - {C} г.\n" +
-                $"Кремний - {Si} г.\n" +
-                $"Медь - {Cu} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Carbon - {C} г.\n" +
+                $"Silicon - {Si} г.\n" +
+                $"Copper - {Cu} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нарезали перец...");
+            Console.WriteLine("Chopped pepper...");
         }
         public override string GetName()
         {
-            return "Перец";
+            return "Pepper";
         }
     }
 }

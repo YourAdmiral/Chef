@@ -10,45 +10,45 @@ namespace Chef.Cultivators
         private double _weight = -1;
         protected string GetSort()
         {
-            Console.WriteLine("---Укажите информацию об ингредиенте---");
+            Console.WriteLine("---Enter ingredient information---");
             string sort;
-            Console.WriteLine("Введите название: ");
+            Console.WriteLine("Enter name: ");
             sort = Console.ReadLine();
             return sort;
         }
         protected string GetColor()
         {
             string color;
-            Console.WriteLine("Введите цвет: ");
+            Console.WriteLine("Enter color: ");
             color = Console.ReadLine();
             return color;
         }
         protected double GetWeight()
         {
             _weight = -1;
-            Console.WriteLine("Введите вес (г): ");
+            Console.WriteLine("Enter weight (g): ");
             _weight = GetDouble();
             return _weight;
 
         }
         protected double GetProteins()
         {
-            Console.WriteLine("Введите количество протеина (г): ");
+            Console.WriteLine("Enter proteins (g): ");
             return GetDouble();
         }
         protected double GetFats()
         {
-            Console.WriteLine("Введите количество жиров (г): ");
+            Console.WriteLine("Enter fats (g): ");
             return GetDouble();
         }
         protected double GetCarbohydrates()
         {
-            Console.WriteLine("Введите количество углеводов (г): ");
+            Console.WriteLine("Enter carbohydrates (g): ");
             return GetDouble();
         }
         protected double GetCalories()
         {
-            Console.WriteLine("Введите количество калорий (ккал): ");
+            Console.WriteLine("Enter calories (kcal): ");
             double num = 0;
             while (num == 0)
             {
@@ -65,14 +65,14 @@ namespace Chef.Cultivators
                 catch (Exception)
                 {
                     num = 0;
-                    Console.WriteLine("Ошибка: Введено некорректное значение!");
+                    Console.WriteLine("Error: Invalid value entered!");
                 }
             }
             return num;
         }
         protected double GetWater()
         {
-            Console.WriteLine("Введите количество воды (г): ");
+            Console.WriteLine("Enter water amount (g): ");
             return GetDouble();
         }
         protected double GetDouble()
@@ -97,7 +97,7 @@ namespace Chef.Cultivators
                 catch (Exception)
                 {
                     num = 0;
-                    Console.WriteLine("Ошибка: Введено некорректное значение!");
+                    Console.WriteLine("Error: Invalid value entered!");
                 }
             }
             return num;

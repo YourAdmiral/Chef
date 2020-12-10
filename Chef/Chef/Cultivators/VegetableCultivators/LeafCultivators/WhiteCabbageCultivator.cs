@@ -26,17 +26,17 @@ namespace Chef.Cultivators.LeafCultivators
         }
         protected double GetCo()
         {
-            Console.WriteLine("Введите количество оксида углерода (г): ");
+            Console.WriteLine("Enter the amount of carbon monoxide (g): ");
             return GetDouble();
         }
         protected double GetMo()
         {
-            Console.WriteLine("Введите количество молибдена (г): ");
+            Console.WriteLine("Enter the amount of molybdenum (g): ");
             return GetDouble();
         }
         protected double GetCr()
         {
-            Console.WriteLine("Введите количество хрома (г): ");
+            Console.WriteLine("Enter the amount of chromium (g): ");
             return GetDouble();
         }
     }

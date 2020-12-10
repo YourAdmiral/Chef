@@ -49,19 +49,19 @@ namespace Chef.Vegetables.Spices
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Кальций - {Ca} г.\n" +
-                $"Магний - {Mg} г.\n" +
-                $"Натрий - {Na} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Calcium - {Ca} г.\n" +
+                $"Magnesium - {Mg} г.\n" +
+                $"Sodium - {Na} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Налили уксуса...");
+            Console.WriteLine("Poured vinegar...");
         }
         public override string GetName()
         {
-            return "Уксус";
+            return "Vinegar";
         }
     }
 }

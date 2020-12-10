@@ -45,19 +45,19 @@ namespace Chef.Vegetables.Leafs
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Железо - {Fe} г.\n" +
-                $"Йод - {I} г.\n" +
-                $"Марганец - {Mn} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Iron - {Fe} г.\n" +
+                $"Iodine - {I} г.\n" +
+                $"Manganese - {Mn} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нашинковали брокколи...");
+            Console.WriteLine("Chopped broccoli...");
         }
         public override string GetName()
         {
-            return "Брокколи";
+            return "Broccoli";
         }
     }
 }

@@ -46,19 +46,19 @@ namespace Chef.Vegetables.Leafs
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Оксид углерода - {Co} г.\n" +
-                $"Молибден - {Mo} г.\n" +
-                $"Хром - {Cr} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Carbon monoxide - {Co} г.\n" +
+                $"Molybdenum - {Mo} г.\n" +
+                $"Chromium - {Cr} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нашинковали капусту...");
+            Console.WriteLine("Chopped cabbage...");
         }
         public override string GetName()
         {
-            return "Белокочанная капуста";
+            return "White cabbage";
         }
     }
 }

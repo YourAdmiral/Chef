@@ -26,17 +26,17 @@ namespace Chef.Cultivators.FetusCultivators
         }
         protected double GetC()
         {
-            Console.WriteLine("Введите количество углерода (г): ");
+            Console.WriteLine("Enter the amount of carbon (g): ");
             return GetDouble();
         }
         protected double GetSi()
         {
-            Console.WriteLine("Введите количество кремния (г): ");
+            Console.WriteLine("Enter the amount of silicon (g): ");
             return GetDouble();
         }
         protected double GetCu()
         {
-            Console.WriteLine("Введите количество меди (г): ");
+            Console.WriteLine("Enter the amount of copper (g): ");
             return GetDouble();
         }
     }

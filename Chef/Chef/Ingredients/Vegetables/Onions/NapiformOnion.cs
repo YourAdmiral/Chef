@@ -46,19 +46,19 @@ namespace Chef.Vegetables.Onions
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Оксид углерода - {Co} г.\n" +
-                $"Кремний - {Si} г.\n" +
-                $"Углерод - {C} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Carbon monoxide - {Co} г.\n" +
+                $"Silicon - {Si} г.\n" +
+                $"Carbon - {C} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нарезали репчатый лук...");
+            Console.WriteLine("Cut napiform onion...");
         }
         public override string GetName()
         {
-            return "Лук репчатый";
+            return "Napiform onion";
         }
     }
 }

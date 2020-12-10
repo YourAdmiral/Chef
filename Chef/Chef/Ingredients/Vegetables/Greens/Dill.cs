@@ -46,19 +46,19 @@ namespace Chef.Vegetables.Greens
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine($"Минералы и витамины:\n" +
-                $"Марганец - {Mn} г.\n" +
-                $"Хром - {Cr} г.\n" +
-                $"Оксид углерода - {Co} г.");
+            Console.WriteLine($"Minerals and vitamins:\n" +
+                $"Manganese - {Mn} г.\n" +
+                $"Chromium - {Cr} г.\n" +
+                $"Carbon monoxide - {Co} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нарезали укроп...");
+            Console.WriteLine("Chopped dill...");
         }
         public override string GetName()
         {
-            return "Укроп";
+            return "Dill";
         }
     }
 }

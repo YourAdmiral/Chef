@@ -14,12 +14,12 @@ namespace Chef.Vegetables.Greens
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нарезали стебли...");
+            Console.WriteLine("Cut the stems...");
         }
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine("Классификация:\nЗеленое.");
+            Console.WriteLine("Classification:\nGreen.");
         }
     }
 }

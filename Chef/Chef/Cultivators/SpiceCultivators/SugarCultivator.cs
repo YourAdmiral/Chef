@@ -26,17 +26,17 @@ namespace Chef.Cultivators.SpiceCultivators
         }
         protected double GetCa()
         {
-            Console.WriteLine("Введите количество кальция (г): ");
+            Console.WriteLine("Enter the amount of calcium (g): ");
             return GetDouble();
         }
         protected double GetNa()
         {
-            Console.WriteLine("Введите количество натрия (г): ");
+            Console.WriteLine("Enter the amount of sodium (g): ");
             return GetDouble();
         }
         protected double GetFe()
         {
-            Console.WriteLine("Введите количество железа (г): ");
+            Console.WriteLine("Enter the amount of iron (g): ");
             return GetDouble();
         }
     }

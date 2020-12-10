@@ -46,19 +46,19 @@ namespace Chef.Vegetables.Roots
         public override void ShowInformation()
         {
             base.ShowInformation();
-            Console.WriteLine("Минералы и витамины:\n" +
-                $"Кремний - {Si} г.\n" +
-                $"Хром - {Cr} г.\n" +
-                $"Марганец - {Mn} г.");
+            Console.WriteLine("Minerals and vitamins:\n" +
+                $"Silicon - {Si} г.\n" +
+                $"Chromium - {Cr} г.\n" +
+                $"Manganese - {Mn} г.");
         }
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine("Нарезали свеклу...");
+            Console.WriteLine("Cut beet...");
         }
         public override string GetName()
         {
-            return "Свекла";
+            return "Beet";
         }
     }
 }

@@ -26,17 +26,17 @@ namespace Chef.Cultivators.GreenCultivators
         }
         protected double GetMg()
         {
-            Console.WriteLine("Введите количество магния (г): ");
+            Console.WriteLine("Enter the amount of magnesium (g): ");
             return GetDouble();
         }
         protected double GetCu()
         {
-            Console.WriteLine("Введите количество меди (г): ");
+            Console.WriteLine("Enter the amount of copper (g): ");
             return GetDouble();
         }
         protected double GetP()
         {
-            Console.WriteLine("Введите количество фосфора (г): ");
+            Console.WriteLine("Enter the amount of phosphorus (g):: ");
             return GetDouble();
         }
     }
