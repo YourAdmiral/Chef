@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Chef.Cultivators;
 using Chef.Cultivators.FetusCultivators;
 using Chef.Cultivators.OnionCultivators;
 using Chef.Cultivators.SpiceCultivators;
@@ -14,14 +15,30 @@ namespace Chef
 {
     internal class Cook
     {
-        private static List<Ingredient> _ingredients = new List<Ingredient>();
-        private static List<Salad> _salads = new List<Salad>();
+        private static IList<Ingredient> _ingredients = new List<Ingredient>();
+        private static IList<Salad> _salads = new List<Salad>();
         private static RootCultivator _rootCultivator;
         private static FetusCultivator _fetusCultivator;
         private static OnionCultivator _onionCultivator;
         private static GreenCultivator _greenCultivator;
         private static LeafCultivator _leafCultivator;
         private static SpiceCultivator _spiceCultivator;
+        private static PotatoCultivator _potatoCultivator;
+        private static CarrotCultivator _carrotCultivator;
+        private static BeetCultivator _beetCultivator;
+        private static TomatoCultivator _tomatoCultivator;
+        private static CucumberCultivator _cucumberCultivator;
+        private static PepperCultivator _pepperCultivator;
+        private static DillCultivator _dillCultivator;
+        private static ParsleyCultivator _parsleyCultivator;
+        private static SorrelCultivator _sorrelCultivator;
+        private static BroccoliCultivator _broccoliCultivator;
+        private static KohlrabiCultivator _kohlrabiCultivator;
+        private static WhiteCabbageCultivator _whiteCabbageCultivator;
+        private static GarlicCultivator _garlicCultivator;
+        private static LeekOnionCultivator _leekOnionCultivator;
+        private static NapiformOnionCultivator _napiformOnionCultivator;
+
         private static void Main(string[] args)
         {
             Choose();
@@ -309,15 +326,21 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        _rootCultivator = new PotatoCultivator();
+                        if (_potatoCultivator==null)
+                            _potatoCultivator = new PotatoCultivator();
+                        _rootCultivator = _potatoCultivator;
                         _ingredients.Add(_rootCultivator.CultivateRoot());
                         break;
                     case ConsoleKey.D2:
-                        _rootCultivator = new CarrotCultivator();
+                        if (_carrotCultivator == null)
+                            _carrotCultivator = new CarrotCultivator();
+                        _rootCultivator = _carrotCultivator;
                         _ingredients.Add(_rootCultivator.CultivateRoot());
                         break;
                     case ConsoleKey.D3:
-                        _rootCultivator = new BeetCultivator();
+                        if (_beetCultivator == null)
+                            _beetCultivator = new BeetCultivator();
+                        _rootCultivator = _beetCultivator;
                         _ingredients.Add(_rootCultivator.CultivateRoot());
                         break;
                     case ConsoleKey.D0:
@@ -345,15 +368,21 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        _fetusCultivator = new TomatoCultivator();
+                        if (_tomatoCultivator == null)
+                            _tomatoCultivator = new TomatoCultivator();
+                        _fetusCultivator = _tomatoCultivator;
                         _ingredients.Add(_fetusCultivator.CultivateFetus());
                         break;
                     case ConsoleKey.D2:
-                        _fetusCultivator = new PepperCultivator();
+                        if (_pepperCultivator == null)
+                            _pepperCultivator = new PepperCultivator();
+                        _fetusCultivator = _pepperCultivator;
                         _ingredients.Add(_fetusCultivator.CultivateFetus());
                         break;
                     case ConsoleKey.D3:
-                        _fetusCultivator = new CucumberCultivator();
+                        if (_cucumberCultivator == null)
+                            _cucumberCultivator = new CucumberCultivator();
+                        _fetusCultivator = _cucumberCultivator;
                         _ingredients.Add(_fetusCultivator.CultivateFetus());
                         break;
                     case ConsoleKey.D0:
@@ -381,15 +410,21 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        _onionCultivator = new GarlicCultivator();
+                        if (_garlicCultivator == null)
+                            _garlicCultivator = new GarlicCultivator();
+                        _onionCultivator = _garlicCultivator;
                         _ingredients.Add(_onionCultivator.CultivateOnion());
                         break;
                     case ConsoleKey.D2:
-                        _onionCultivator = new LeekOnionCultivator();
+                        if (_leekOnionCultivator == null)
+                            _leekOnionCultivator = new LeekOnionCultivator();
+                        _onionCultivator = _leekOnionCultivator;
                         _ingredients.Add(_onionCultivator.CultivateOnion());
                         break;
                     case ConsoleKey.D3:
-                        _onionCultivator = new NapiformOnionCultivator();
+                        if (_napiformOnionCultivator == null)
+                            _napiformOnionCultivator = new NapiformOnionCultivator();
+                        _onionCultivator = _napiformOnionCultivator;
                         _ingredients.Add(_onionCultivator.CultivateOnion());
                         break;
                     case ConsoleKey.D0:
@@ -417,15 +452,21 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        _greenCultivator = new SorrelCultivator();
+                        if (_sorrelCultivator == null)
+                            _sorrelCultivator = new SorrelCultivator();
+                        _greenCultivator = _sorrelCultivator;
                         _ingredients.Add(_greenCultivator.CultivateGreen());
                         break;
                     case ConsoleKey.D2:
-                        _greenCultivator = new ParsleyCultivator();
+                        if (_parsleyCultivator == null)
+                            _parsleyCultivator = new ParsleyCultivator();
+                        _greenCultivator = _parsleyCultivator;
                         _ingredients.Add(_greenCultivator.CultivateGreen());
                         break;
                     case ConsoleKey.D3:
-                        _greenCultivator = new DillCultivator();
+                        if (_dillCultivator == null)
+                            _dillCultivator = new DillCultivator();
+                        _greenCultivator = _dillCultivator;
                         _ingredients.Add(_greenCultivator.CultivateGreen());
                         break;
                     case ConsoleKey.D0:
@@ -453,15 +494,21 @@ namespace Chef
                 switch (choose)
                 {
                     case ConsoleKey.D1:
-                        _leafCultivator = new WhiteCabbageCultivator();
+                        if (_whiteCabbageCultivator == null)
+                            _whiteCabbageCultivator = new WhiteCabbageCultivator();
+                        _leafCultivator = _whiteCabbageCultivator;
                         _ingredients.Add(_leafCultivator.CultivateLeaf());
                         break;
                     case ConsoleKey.D2:
-                        _leafCultivator = new BroccoliCultivator();
+                        if (_broccoliCultivator == null)
+                            _broccoliCultivator = new BroccoliCultivator();
+                        _leafCultivator = _broccoliCultivator;
                         _ingredients.Add(_leafCultivator.CultivateLeaf());
                         break;
                     case ConsoleKey.D3:
-                        _leafCultivator = new KohlrabiCultivator();
+                        if (_kohlrabiCultivator == null)
+                            _kohlrabiCultivator = new KohlrabiCultivator();
+                        _leafCultivator = _kohlrabiCultivator;
                         _ingredients.Add(_leafCultivator.CultivateLeaf());
                         break;
                     case ConsoleKey.D0:

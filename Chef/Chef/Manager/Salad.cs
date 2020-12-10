@@ -9,22 +9,22 @@ namespace Chef.Manager
     internal class Salad
     {
         public string Name { get; set; }
-        private List<Ingredient> _composition = new List<Ingredient>();
+        private IList<Ingredient> _composition = new List<Ingredient>();
         public Salad(string name)
         {
             Name = name;
         }
-        public Salad(string name, List<Ingredient> composition)
+        public Salad(string name, IList<Ingredient> composition)
         {
             Name = name;
             AddIngredients(composition);
         }
-        public void AddIngredient(Ingredient vegetable)
+        public void AddIngredient(Ingredient ingredient)
         {
-            _composition.Add(vegetable);
-            vegetable.Handle();
+            _composition.Add(ingredient);
+            ingredient.Handle();
         }
-        public void AddIngredients(List<Ingredient> vegetables)
+        public void AddIngredients(IList<Ingredient> vegetables)
         {
             foreach (var vegetable in vegetables)
                 AddIngredient(vegetable);

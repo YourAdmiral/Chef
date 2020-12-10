@@ -19,7 +19,7 @@ namespace Chef.Vegetables
         public override void Handle()
         {
             base.Handle();
-            Console.WriteLine($"Очистили от пыли и грязи...\n");
+            Console.WriteLine($"Очистили от пыли и грязи...");
         }
     }
 }

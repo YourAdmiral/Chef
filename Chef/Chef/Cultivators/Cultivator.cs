@@ -12,7 +12,7 @@ namespace Chef.Cultivators
         {
             Console.WriteLine("---Укажите информацию об ингредиенте---");
             string sort;
-            Console.WriteLine("Введите название сорта: ");
+            Console.WriteLine("Введите название: ");
             sort = Console.ReadLine();
             return sort;
         }
@@ -25,6 +25,7 @@ namespace Chef.Cultivators
         }
         protected double GetWeight()
         {
+            _weight = -1;
             Console.WriteLine("Введите вес (г): ");
             _weight = GetDouble();
             return _weight;

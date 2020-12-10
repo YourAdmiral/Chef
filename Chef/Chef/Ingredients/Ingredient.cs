@@ -95,7 +95,7 @@ namespace Chef.Ingredients
         }
         public virtual void Handle()
         {
-            Console.WriteLine($"---Подготавливаем {GetName()}---\n");
+            Console.WriteLine($"---Подготавливаем {GetName()}---");
         }
         protected bool CheckDouble(double value)
         {
